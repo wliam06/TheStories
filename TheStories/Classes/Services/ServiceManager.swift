@@ -17,7 +17,7 @@ class ServiceManager {
         return Constant.baseUrl
     }
 
-    lazy var UnsplashHTTPHeaders: HTTPHeaders = {
+    lazy var unsplashHTTPHeaders: HTTPHeaders = {
         return [
             "Accept": Constant.applicationJson,
             "Content-Type": Constant.applicationJson,
@@ -27,7 +27,7 @@ class ServiceManager {
     }()
 
     func startConnection() {
-        let httpHeader = UnsplashHTTPHeaders
+        let httpHeader = unsplashHTTPHeaders
 
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.httpCookieAcceptPolicy = .never

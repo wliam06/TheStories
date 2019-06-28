@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D0976E322C5F39700DC0EB1 /* ServicePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0976E222C5F39700DC0EB1 /* ServicePath.swift */; };
+		3D0976E922C5FBDC00DC0EB1 /* MockServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0976E822C5FBDC00DC0EB1 /* MockServiceManager.swift */; };
 		3D33757922C4A7EF006EB9F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */; };
 		3D33757B22C4A7EF006EB9F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33757A22C4A7EF006EB9F6 /* ViewController.swift */; };
 		3D33757E22C4A7EF006EB9F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D33757C22C4A7EF006EB9F6 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		3D0976E222C5F39700DC0EB1 /* ServicePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePath.swift; sourceTree = "<group>"; };
+		3D0976E822C5FBDC00DC0EB1 /* MockServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceManager.swift; sourceTree = "<group>"; };
 		3D33757522C4A7EF006EB9F6 /* TheStories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheStories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D33757A22C4A7EF006EB9F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		3D33758F22C4A7F1006EB9F6 /* TheStoriesTests */ = {
 			isa = PBXGroup;
 			children = (
+				3D77AEF222C5FD180065C7E5 /* Mock */,
 				3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */,
 				3D33759222C4A7F1006EB9F6 /* Info.plist */,
 			);
@@ -169,6 +172,22 @@
 				3D3375A422C4D488006EB9F6 /* Constant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		3D77AEF222C5FD180065C7E5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AEF322C5FD1B0065C7E5 /* Service */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		3D77AEF322C5FD1B0065C7E5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3D0976E822C5FBDC00DC0EB1 /* MockServiceManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		8F654819DC1FB397C2E1F31E /* Frameworks */ = {
@@ -237,6 +256,7 @@
 					};
 					3D33758B22C4A7F1006EB9F6 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 3D33757422C4A7EF006EB9F6;
 					};
 				};
@@ -388,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */,
+				3D0976E922C5FBDC00DC0EB1 /* MockServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +602,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97G68FMA7U;
 				INFOPLIST_FILE = TheStoriesTests/Info.plist;
@@ -591,6 +613,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.william.TheStoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheStoriesTests/TheStoriesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheStories.app/TheStories";
@@ -603,6 +627,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 97G68FMA7U;
 				INFOPLIST_FILE = TheStoriesTests/Info.plist;
@@ -613,6 +638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.william.TheStoriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheStoriesTests/TheStoriesTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheStories.app/TheStories";
