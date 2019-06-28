@@ -1,0 +1,16 @@
+//
+//  Constant.swift
+//  TheStories
+//
+//  Created by William on 27/06/19.
+//  Copyright © 2019 William. All rights reserved.
+//
+
+import Foundation
+
+struct Constant {
+//    static let baseUrl = "https://api.unsplash.com/"
+    static let baseUrl = "http://api.unsplash.com/v1/"
+    static let clientID = "Client-ID d8a272c480b258b875d82f4062d6c52e4ae7f4b4656add778d71e9b638b2f8be"
+    static let applicationJson = "application/json"
+}
