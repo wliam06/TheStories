@@ -17,14 +17,14 @@ class ServiceManager {
         return Constant.baseUrl
     }
 
-    lazy var unsplashHTTPHeaders: HTTPHeaders = {
+    public var unsplashHTTPHeaders: HTTPHeaders {
         return [
             "Accept": Constant.applicationJson,
             "Content-Type": Constant.applicationJson,
             "Accept-Version": Constant.apiVersion,
             "Authorization": Constant.clientID
         ]
-    }()
+    }
 
     func startConnection() {
         let httpHeader = unsplashHTTPHeaders

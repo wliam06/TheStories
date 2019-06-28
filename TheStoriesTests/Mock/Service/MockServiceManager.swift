@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Alamofire
 
 @testable import TheStories
 class MockServiceManager: ServiceManager {
@@ -17,26 +18,6 @@ class MockServiceManager: ServiceManager {
         invokedBaseURLGetter = true
         invokedBaseURLGetterCount += 1
         return stubbedBaseURL
-    }
-    var invokedUnsplashHTTPHeadersSetter = false
-    var invokedUnsplashHTTPHeadersSetterCount = 0
-    var invokedUnsplashHTTPHeaders: HTTPHeaders?
-    var invokedUnsplashHTTPHeadersList = [HTTPHeaders]()
-    var invokedUnsplashHTTPHeadersGetter = false
-    var invokedUnsplashHTTPHeadersGetterCount = 0
-    var stubbedUnsplashHTTPHeaders: HTTPHeaders!
-    override var UnsplashHTTPHeaders: HTTPHeaders {
-        set {
-            invokedUnsplashHTTPHeadersSetter = true
-            invokedUnsplashHTTPHeadersSetterCount += 1
-            invokedUnsplashHTTPHeaders = newValue
-            invokedUnsplashHTTPHeadersList.append(newValue)
-        }
-        get {
-            invokedUnsplashHTTPHeadersGetter = true
-            invokedUnsplashHTTPHeadersGetterCount += 1
-            return stubbedUnsplashHTTPHeaders
-        }
     }
     var invokedStartConnection = false
     var invokedStartConnectionCount = 0

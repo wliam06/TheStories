@@ -2,14 +2,11 @@
 # platform :ios, '9.0'
 
 use_frameworks!
-
 target 'TheStories' do
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.8.2'
   pod 'AlamofireImage'
 
   target 'TheStoriesTests' do
-    inherit! :search_paths
-    # Pods for testing
+     inherit! :search_paths
   end
-
 end

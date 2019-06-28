@@ -2,12 +2,11 @@
 //  TheStoriesTests.swift
 //  TheStoriesTests
 //
-//  Created by William on 27/06/19.
+//  Created by Wil Liam on 6/28/19.
 //  Copyright © 2019 William. All rights reserved.
 //
 
 import XCTest
-@testable import TheStories
 
 class TheStoriesTests: XCTestCase {
 
