@@ -174,10 +174,10 @@
 		3DCF389E22C61749003AAEFA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3DCF38EB22C62A1B003AAEFA /* Model */,
-				3DCF38A522C617B0003AAEFA /* Constant */,
 				3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */,
 				3D33757A22C4A7EF006EB9F6 /* ViewController.swift */,
+				3DCF38A522C617B0003AAEFA /* Constant */,
+				3DCF38EB22C62A1B003AAEFA /* Model */,
 				3DCF38A022C61753003AAEFA /* Services */,
 				3DCF389F22C61749003AAEFA /* Components */,
 				3DCF38AF22C6192F003AAEFA /* View */,

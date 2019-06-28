@@ -12,7 +12,7 @@ private enum Const {
     static var photos = "/photos"
 }
 
-enum PhotosPath: URLRequestConvertible {
+public enum PhotosPath: URLRequestConvertible {
     case photos(param: Parameters)
 
     var method: HTTPMethod {
@@ -26,8 +26,8 @@ enum PhotosPath: URLRequestConvertible {
         }
     }
 
-    func asURLRequest() throws -> URLRequest {
-        let baseURL = try ServiceManager.shared.baseURL.asURL()
+    public func asURLRequest() throws -> URLRequest {
+        let baseURL = try ServiceManager.api.baseURL.asURL()
 
         var urlRequest = URLRequest(url: baseURL.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue

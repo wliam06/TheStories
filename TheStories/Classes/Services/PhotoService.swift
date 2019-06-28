@@ -13,6 +13,21 @@ typealias OnCompletion = ([[String: Any]]?, ErrorRespond?) -> Void
 class PhotosService {
     init() {}
 
-    func listPhotos(_ pageNum: Int, pageCount: Int) {
+    func listPhotos(_ pageNum: Int, pageCount: Int, completion: @escaping OnCompletion) {
+        let param: [String: Any] = [Constant.page: pageNum, Constant.perPage: pageCount]
+
+        let url = PhotosPath.photos(param: param)
+        _ = ServiceManager.api.request(url) { (_, responseObject, error) in
+            if let err = error, err._code != NSURLErrorCancelled {
+                let err = ErrorRespond(type: .failedConnection)
+                completion(nil, err)
+
+                return
+            }
+
+            if let response = responseObject as? [[String: Any]] {
+                completion(response, nil)
+            }
+        }
     }
 }
