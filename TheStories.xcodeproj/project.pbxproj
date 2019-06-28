@@ -10,7 +10,6 @@
 		3D0976E322C5F39700DC0EB1 /* ServicePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0976E222C5F39700DC0EB1 /* ServicePath.swift */; };
 		3D0976E922C5FBDC00DC0EB1 /* MockServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0976E822C5FBDC00DC0EB1 /* MockServiceManager.swift */; };
 		3D33757922C4A7EF006EB9F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */; };
-		3D33757B22C4A7EF006EB9F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33757A22C4A7EF006EB9F6 /* ViewController.swift */; };
 		3D33757E22C4A7EF006EB9F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D33757C22C4A7EF006EB9F6 /* Main.storyboard */; };
 		3D33758122C4A7EF006EB9F6 /* TheStories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D33757F22C4A7EF006EB9F6 /* TheStories.xcdatamodeld */; };
 		3D33758322C4A7F1006EB9F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D33758222C4A7F1006EB9F6 /* Assets.xcassets */; };
@@ -18,6 +17,15 @@
 		3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */; };
 		3D3375A222C4C01B006EB9F6 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3375A122C4C01B006EB9F6 /* ServiceManager.swift */; };
 		3D3375A522C4D488006EB9F6 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3375A422C4D488006EB9F6 /* Constant.swift */; };
+		3D77AEFD22C5FE2F0065C7E5 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AEFB22C5FE2F0065C7E5 /* PhotosListViewController.swift */; };
+		3D77AEFE22C5FE2F0065C7E5 /* PhotosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D77AEFC22C5FE2F0065C7E5 /* PhotosListViewController.xib */; };
+		3D77AF0022C5FE400065C7E5 /* PhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AEFF22C5FE400065C7E5 /* PhotosListView.swift */; };
+		3D77AF0522C5FE900065C7E5 /* PhotosListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AF0422C5FE900065C7E5 /* PhotosListInteractor.swift */; };
+		3D77AF0722C5FE9F0065C7E5 /* PhotosListInteractorIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AF0622C5FE9F0065C7E5 /* PhotosListInteractorIO.swift */; };
+		3D77AF0A22C5FEE10065C7E5 /* PhotosListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AF0922C5FEE10065C7E5 /* PhotosListEvent.swift */; };
+		3D77AF0C22C5FEF60065C7E5 /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AF0B22C5FEF60065C7E5 /* PhotosListPresenter.swift */; };
+		3D77AF0E22C5FF3A0065C7E5 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AF0D22C5FF3A0065C7E5 /* Router.swift */; };
+		3D77AF1122C5FF6F0065C7E5 /* PhotosListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D77AF1022C5FF6F0065C7E5 /* PhotosListRouter.swift */; };
 		6F14F40F4822429761536C4E /* Pods_TheStoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBFE6532E4DF0B76E21760D /* Pods_TheStoriesTests.framework */; };
 		C47F96B187F7F3ACFC4D6352 /* Pods_TheStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71673394F4DF9993255A80 /* Pods_TheStories.framework */; };
 /* End PBXBuildFile section */
@@ -37,7 +45,6 @@
 		3D0976E822C5FBDC00DC0EB1 /* MockServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceManager.swift; sourceTree = "<group>"; };
 		3D33757522C4A7EF006EB9F6 /* TheStories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheStories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D33757A22C4A7EF006EB9F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D33757D22C4A7EF006EB9F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D33758022C4A7EF006EB9F6 /* TheStories.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheStories.xcdatamodel; sourceTree = "<group>"; };
 		3D33758222C4A7F1006EB9F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +55,15 @@
 		3D33759222C4A7F1006EB9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D3375A122C4C01B006EB9F6 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		3D3375A422C4D488006EB9F6 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3D77AEFB22C5FE2F0065C7E5 /* PhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewController.swift; sourceTree = "<group>"; };
+		3D77AEFC22C5FE2F0065C7E5 /* PhotosListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosListViewController.xib; sourceTree = "<group>"; };
+		3D77AEFF22C5FE400065C7E5 /* PhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListView.swift; sourceTree = "<group>"; };
+		3D77AF0422C5FE900065C7E5 /* PhotosListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListInteractor.swift; sourceTree = "<group>"; };
+		3D77AF0622C5FE9F0065C7E5 /* PhotosListInteractorIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListInteractorIO.swift; sourceTree = "<group>"; };
+		3D77AF0922C5FEE10065C7E5 /* PhotosListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListEvent.swift; sourceTree = "<group>"; };
+		3D77AF0B22C5FEF60065C7E5 /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
+		3D77AF0D22C5FF3A0065C7E5 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3D77AF1022C5FF6F0065C7E5 /* PhotosListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListRouter.swift; sourceTree = "<group>"; };
 		56F761207D47914FC92C620B /* Pods-TheStories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.debug.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.debug.xcconfig"; sourceTree = "<group>"; };
 		AA890AF839837C525D5E586D /* Pods-TheStories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.release.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.release.xcconfig"; sourceTree = "<group>"; };
 		CD71673394F4DF9993255A80 /* Pods_TheStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,11 +146,15 @@
 		3D33759D22C4BEEA006EB9F6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3D3375A322C4D47F006EB9F6 /* Constant */,
 				3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */,
-				3D33757A22C4A7EF006EB9F6 /* ViewController.swift */,
+				3D3375A322C4D47F006EB9F6 /* Constant */,
+				3D77AF0122C5FE4B0065C7E5 /* Components */,
 				3D33759E22C4BEEF006EB9F6 /* Services */,
+				3D77AEF722C5FDD50065C7E5 /* View */,
+				3D77AEF922C5FDEA0065C7E5 /* Interactor */,
+				3D77AEF822C5FDE60065C7E5 /* Presenter */,
 				3D3375A022C4BF32006EB9F6 /* Entity */,
+				3D77AEFA22C5FDEF0065C7E5 /* Router */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -188,6 +208,82 @@
 				3D0976E822C5FBDC00DC0EB1 /* MockServiceManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		3D77AEF722C5FDD50065C7E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF0222C5FE560065C7E5 /* PhotosList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D77AEF822C5FDE60065C7E5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF0822C5FED70065C7E5 /* PhotosList */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3D77AEF922C5FDEA0065C7E5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF0322C5FE810065C7E5 /* PhotosList */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3D77AEFA22C5FDEF0065C7E5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF0D22C5FF3A0065C7E5 /* Router.swift */,
+				3D77AF0F22C5FF5D0065C7E5 /* PhotosList */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3D77AF0122C5FE4B0065C7E5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3D77AF0222C5FE560065C7E5 /* PhotosList */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AEFF22C5FE400065C7E5 /* PhotosListView.swift */,
+				3D77AEFB22C5FE2F0065C7E5 /* PhotosListViewController.swift */,
+				3D77AEFC22C5FE2F0065C7E5 /* PhotosListViewController.xib */,
+			);
+			path = PhotosList;
+			sourceTree = "<group>";
+		};
+		3D77AF0322C5FE810065C7E5 /* PhotosList */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF0622C5FE9F0065C7E5 /* PhotosListInteractorIO.swift */,
+				3D77AF0422C5FE900065C7E5 /* PhotosListInteractor.swift */,
+			);
+			path = PhotosList;
+			sourceTree = "<group>";
+		};
+		3D77AF0822C5FED70065C7E5 /* PhotosList */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF0922C5FEE10065C7E5 /* PhotosListEvent.swift */,
+				3D77AF0B22C5FEF60065C7E5 /* PhotosListPresenter.swift */,
+			);
+			path = PhotosList;
+			sourceTree = "<group>";
+		};
+		3D77AF0F22C5FF5D0065C7E5 /* PhotosList */ = {
+			isa = PBXGroup;
+			children = (
+				3D77AF1022C5FF6F0065C7E5 /* PhotosListRouter.swift */,
+			);
+			path = PhotosList;
 			sourceTree = "<group>";
 		};
 		8F654819DC1FB397C2E1F31E /* Frameworks */ = {
@@ -286,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D33758622C4A7F1006EB9F6 /* LaunchScreen.storyboard in Resources */,
+				3D77AEFE22C5FE2F0065C7E5 /* PhotosListViewController.xib in Resources */,
 				3D33758322C4A7F1006EB9F6 /* Assets.xcassets in Resources */,
 				3D33757E22C4A7EF006EB9F6 /* Main.storyboard in Resources */,
 			);
@@ -395,11 +492,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3375A522C4D488006EB9F6 /* Constant.swift in Sources */,
-				3D33757B22C4A7EF006EB9F6 /* ViewController.swift in Sources */,
+				3D77AF1122C5FF6F0065C7E5 /* PhotosListRouter.swift in Sources */,
+				3D77AF0C22C5FEF60065C7E5 /* PhotosListPresenter.swift in Sources */,
+				3D77AF0522C5FE900065C7E5 /* PhotosListInteractor.swift in Sources */,
+				3D77AEFD22C5FE2F0065C7E5 /* PhotosListViewController.swift in Sources */,
+				3D77AF0E22C5FF3A0065C7E5 /* Router.swift in Sources */,
 				3D0976E322C5F39700DC0EB1 /* ServicePath.swift in Sources */,
+				3D77AF0022C5FE400065C7E5 /* PhotosListView.swift in Sources */,
 				3D33757922C4A7EF006EB9F6 /* AppDelegate.swift in Sources */,
 				3D33758122C4A7EF006EB9F6 /* TheStories.xcdatamodeld in Sources */,
+				3D77AF0A22C5FEE10065C7E5 /* PhotosListEvent.swift in Sources */,
 				3D3375A222C4C01B006EB9F6 /* ServiceManager.swift in Sources */,
+				3D77AF0722C5FE9F0065C7E5 /* PhotosListInteractorIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
