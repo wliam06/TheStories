@@ -26,6 +26,11 @@
 		3DCF38C322C619D7003AAEFA /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38C222C619D7003AAEFA /* PhotosListPresenter.swift */; };
 		3DCF38C522C619F8003AAEFA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38C422C619F8003AAEFA /* Router.swift */; };
 		3DCF38C822C61A16003AAEFA /* PhotosListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38C722C61A16003AAEFA /* PhotosListRouter.swift */; };
+		3DCF38D222C61B6B003AAEFA /* MockPhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D122C61B6B003AAEFA /* MockPhotosListView.swift */; };
+		3DCF38D422C61B94003AAEFA /* MockPhotosListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D322C61B94003AAEFA /* MockPhotosListEvent.swift */; };
+		3DCF38D622C61BAF003AAEFA /* MockPhotosListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D522C61BAF003AAEFA /* MockPhotosListInteractorInput.swift */; };
+		3DCF38D822C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D722C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift */; };
+		3DCF38DA22C61BE6003AAEFA /* MockPhotosListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D922C61BE6003AAEFA /* MockPhotosListRouter.swift */; };
 		6F14F40F4822429761536C4E /* Pods_TheStoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBFE6532E4DF0B76E21760D /* Pods_TheStoriesTests.framework */; };
 		C47F96B187F7F3ACFC4D6352 /* Pods_TheStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71673394F4DF9993255A80 /* Pods_TheStories.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +69,11 @@
 		3DCF38C222C619D7003AAEFA /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
 		3DCF38C422C619F8003AAEFA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3DCF38C722C61A16003AAEFA /* PhotosListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListRouter.swift; sourceTree = "<group>"; };
+		3DCF38D122C61B6B003AAEFA /* MockPhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListView.swift; sourceTree = "<group>"; };
+		3DCF38D322C61B94003AAEFA /* MockPhotosListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListEvent.swift; sourceTree = "<group>"; };
+		3DCF38D522C61BAF003AAEFA /* MockPhotosListInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListInteractorInput.swift; sourceTree = "<group>"; };
+		3DCF38D722C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListInteractorOutput.swift; sourceTree = "<group>"; };
+		3DCF38D922C61BE6003AAEFA /* MockPhotosListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListRouter.swift; sourceTree = "<group>"; };
 		56F761207D47914FC92C620B /* Pods-TheStories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.debug.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.debug.xcconfig"; sourceTree = "<group>"; };
 		AA890AF839837C525D5E586D /* Pods-TheStories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.release.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.release.xcconfig"; sourceTree = "<group>"; };
 		CD71673394F4DF9993255A80 /* Pods_TheStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,7 +288,8 @@
 		3DCF38C922C61AE7003AAEFA /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */,
+				3DCF38D022C61B5E003AAEFA /* Service */,
+				3DCF38CF22C61B55003AAEFA /* PhotosList */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -316,6 +327,26 @@
 			children = (
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		3DCF38CF22C61B55003AAEFA /* PhotosList */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF38D122C61B6B003AAEFA /* MockPhotosListView.swift */,
+				3DCF38D322C61B94003AAEFA /* MockPhotosListEvent.swift */,
+				3DCF38D522C61BAF003AAEFA /* MockPhotosListInteractorInput.swift */,
+				3DCF38D722C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift */,
+				3DCF38D922C61BE6003AAEFA /* MockPhotosListRouter.swift */,
+			);
+			path = PhotosList;
+			sourceTree = "<group>";
+		};
+		3DCF38D022C61B5E003AAEFA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		8F654819DC1FB397C2E1F31E /* Frameworks */ = {
@@ -553,8 +584,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCF38D622C61BAF003AAEFA /* MockPhotosListInteractorInput.swift in Sources */,
 				3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */,
+				3DCF38D822C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift in Sources */,
+				3DCF38D422C61B94003AAEFA /* MockPhotosListEvent.swift in Sources */,
+				3DCF38D222C61B6B003AAEFA /* MockPhotosListView.swift in Sources */,
 				3DCF38AE22C6186E003AAEFA /* MockServiceManager.swift in Sources */,
+				3DCF38DA22C61BE6003AAEFA /* MockPhotosListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
