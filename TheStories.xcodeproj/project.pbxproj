@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		3D33758322C4A7F1006EB9F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D33758222C4A7F1006EB9F6 /* Assets.xcassets */; };
 		3D33758622C4A7F1006EB9F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D33758422C4A7F1006EB9F6 /* LaunchScreen.storyboard */; };
 		3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */; };
+		3DCF38A422C61788003AAEFA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A322C61788003AAEFA /* ServiceManager.swift */; };
+		3DCF38A722C617BF003AAEFA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A622C617BF003AAEFA /* Constant.swift */; };
+		3DCF38AA22C617F1003AAEFA /* ServicePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A922C617F1003AAEFA /* ServicePath.swift */; };
+		3DCF38AE22C6186E003AAEFA /* MockServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */; };
 		6F14F40F4822429761536C4E /* Pods_TheStoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBFE6532E4DF0B76E21760D /* Pods_TheStoriesTests.framework */; };
 		C47F96B187F7F3ACFC4D6352 /* Pods_TheStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71673394F4DF9993255A80 /* Pods_TheStories.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +44,10 @@
 		3D33758C22C4A7F1006EB9F6 /* TheStoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheStoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheStoriesTests.swift; sourceTree = "<group>"; };
 		3D33759222C4A7F1006EB9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DCF38A322C61788003AAEFA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		3DCF38A622C617BF003AAEFA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3DCF38A922C617F1003AAEFA /* ServicePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePath.swift; sourceTree = "<group>"; };
+		3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceManager.swift; sourceTree = "<group>"; };
 		56F761207D47914FC92C620B /* Pods-TheStories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.debug.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.debug.xcconfig"; sourceTree = "<group>"; };
 		AA890AF839837C525D5E586D /* Pods-TheStories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.release.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.release.xcconfig"; sourceTree = "<group>"; };
 		CD71673394F4DF9993255A80 /* Pods_TheStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,13 +110,9 @@
 		3D33757722C4A7EF006EB9F6 /* TheStories */ = {
 			isa = PBXGroup;
 			children = (
-				3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */,
-				3D33757A22C4A7EF006EB9F6 /* ViewController.swift */,
+				3DCF389E22C61749003AAEFA /* Classes */,
+				3DCF38A122C61762003AAEFA /* Resources */,
 				3D33757C22C4A7EF006EB9F6 /* Main.storyboard */,
-				3D33758222C4A7F1006EB9F6 /* Assets.xcassets */,
-				3D33758422C4A7F1006EB9F6 /* LaunchScreen.storyboard */,
-				3D33758722C4A7F1006EB9F6 /* Info.plist */,
-				3D33757F22C4A7EF006EB9F6 /* TheStories.xcdatamodeld */,
 			);
 			path = TheStories;
 			sourceTree = "<group>";
@@ -118,8 +122,64 @@
 			children = (
 				3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */,
 				3D33759222C4A7F1006EB9F6 /* Info.plist */,
+				3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */,
 			);
 			path = TheStoriesTests;
+			sourceTree = "<group>";
+		};
+		3DCF389E22C61749003AAEFA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF38A522C617B0003AAEFA /* Constant */,
+				3D33757822C4A7EF006EB9F6 /* AppDelegate.swift */,
+				3D33757A22C4A7EF006EB9F6 /* ViewController.swift */,
+				3DCF38A022C61753003AAEFA /* Services */,
+				3DCF389F22C61749003AAEFA /* Components */,
+				3DCF38A222C61775003AAEFA /* Entity */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3DCF389F22C61749003AAEFA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3DCF38A022C61753003AAEFA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF38A322C61788003AAEFA /* ServiceManager.swift */,
+				3DCF38A922C617F1003AAEFA /* ServicePath.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3DCF38A122C61762003AAEFA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D33758222C4A7F1006EB9F6 /* Assets.xcassets */,
+				3D33758422C4A7F1006EB9F6 /* LaunchScreen.storyboard */,
+				3D33758722C4A7F1006EB9F6 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3DCF38A222C61775003AAEFA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3D33757F22C4A7EF006EB9F6 /* TheStories.xcdatamodeld */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3DCF38A522C617B0003AAEFA /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3DCF38A622C617BF003AAEFA /* Constant.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		8F654819DC1FB397C2E1F31E /* Frameworks */ = {
@@ -162,6 +222,7 @@
 				3D33758822C4A7F1006EB9F6 /* Sources */,
 				3D33758922C4A7F1006EB9F6 /* Frameworks */,
 				3D33758A22C4A7F1006EB9F6 /* Resources */,
+				90AB742997BCE9B628C46B55 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,18 +299,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheStories/Pods-TheStories-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TheStories/Pods-TheStories-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TheStories/Pods-TheStories-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -273,6 +327,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		90AB742997BCE9B628C46B55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheStoriesTests/Pods-TheStoriesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheStoriesTests/Pods-TheStoriesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheStoriesTests/Pods-TheStoriesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		B9146C59A3B328273972AB94 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -325,9 +396,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCF38A722C617BF003AAEFA /* Constant.swift in Sources */,
 				3D33757B22C4A7EF006EB9F6 /* ViewController.swift in Sources */,
+				3DCF38AA22C617F1003AAEFA /* ServicePath.swift in Sources */,
 				3D33757922C4A7EF006EB9F6 /* AppDelegate.swift in Sources */,
 				3D33758122C4A7EF006EB9F6 /* TheStories.xcdatamodeld in Sources */,
+				3DCF38A422C61788003AAEFA /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */,
+				3DCF38AE22C6186E003AAEFA /* MockServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
