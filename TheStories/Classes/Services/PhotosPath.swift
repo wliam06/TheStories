@@ -1,5 +1,5 @@
 //
-//  ServicePath.swift
+//  PhotosPath.swift
 //  TheStories
 //
 //  Created by Wil Liam on 6/28/19.
@@ -12,8 +12,8 @@ private enum Const {
     static var photos = "/photos"
 }
 
-enum SearchPath: URLRequestConvertible {
-    case photos
+enum PhotosPath: URLRequestConvertible {
+    case photos(param: Parameters)
 
     var method: HTTPMethod {
         return .get
@@ -32,6 +32,12 @@ enum SearchPath: URLRequestConvertible {
         var urlRequest = URLRequest(url: baseURL.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
 
+        switch self {
+        case .photos(let param):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: param)
+        }
+
+        debugPrint("Requesting: \(urlRequest)")
         return urlRequest
     }
 }
