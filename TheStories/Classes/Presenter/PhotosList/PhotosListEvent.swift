@@ -9,4 +9,5 @@
 import Foundation
 
 protocol PhotosListEvent: class {
+    func onRequestListPhotos()
 }

@@ -9,7 +9,9 @@
 import Foundation
 
 protocol PhotosListInteractorInput: class {
+    func requestListPhotos()
 }
 
 protocol PhotosListInteractorOutput: class {
+    func foundListPhotos(withPhotos photos: [Photo])
 }

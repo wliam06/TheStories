@@ -13,9 +13,19 @@ class PhotosListPresenter: PhotosListEvent, PhotosListInteractorOutput {
     let interactor: PhotosListInteractorInput
     let router: PhotosListRouter
 
+    // MARK: - Initializer
     init(view: PhotosListView, interactor: PhotosListInteractorInput, router: PhotosListRouter) {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+
+    func onRequestListPhotos() {
+        interactor.requestListPhotos()
+    }
+
+    // output
+    func foundListPhotos(withPhotos photos: [Photo]) {
+        view?.showListPhotos(withPhotos: photos)
     }
 }

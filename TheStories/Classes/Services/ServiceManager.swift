@@ -43,9 +43,6 @@ class ServiceManager {
 
     public class func startConnection() {
         let httpHeader = unsplashHTTPHeaders
-
-        debugPrint("HTTP HEADER: \(httpHeader)")
-        
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.httpCookieAcceptPolicy = .never
         sessionConfig.httpCookieStorage = nil
@@ -65,7 +62,6 @@ class ServiceManager {
                  completionHandler: @escaping (HTTPURLResponse?, Any?, Error?) -> Void) -> DataRequest {
         let dataRequest = sessionManager.request(url)
         dataRequest.responseJSON { (dataResponse) in
-            debugPrint("here: ", dataResponse.result.value)
             completionHandler(dataResponse.response, dataResponse.result.value, dataResponse.error)
         }
 

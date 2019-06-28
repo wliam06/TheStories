@@ -9,4 +9,5 @@
 import Foundation
 
 protocol PhotosListView: class {
+    func showListPhotos(withPhotos photos: [Photo])
 }
