@@ -12,5 +12,9 @@ struct Constant {
     static let baseUrl = "https://api.unsplash.com"
     static let clientID = "Client-ID d8a272c480b258b875d82f4062d6c52e4ae7f4b4656add778d71e9b638b2f8be"
     static let applicationJson = "application/json"
-    static let apiVersion = "1"
+    static let apiVersion = "v1"
+
+    // Services
+    static let page = "page"
+    static let perPage = "per_page"
 }
