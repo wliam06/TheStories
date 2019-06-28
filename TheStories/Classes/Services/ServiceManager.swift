@@ -9,12 +9,33 @@
 import Alamofire
 
 class ServiceManager {
-    static var UnsplashHTTPHeaders: HTTPHeaders {
-        var baseUrl = Constant.baseUrl
+    private init() {}
+
+    static let shared = ServiceManager()
+
+    public var baseURL: String {
+        return Constant.baseUrl
+    }
+
+    lazy var UnsplashHTTPHeaders: HTTPHeaders = {
         return [
             "Accept": Constant.applicationJson,
             "Content-Type": Constant.applicationJson,
+            "Accept-Version": Constant.apiVersion,
             "Authorization": Constant.clientID
         ]
+    }()
+
+    func startConnection() {
+        let httpHeader = UnsplashHTTPHeaders
+
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.httpCookieAcceptPolicy = .never
+        sessionConfig.httpCookieStorage = nil
+        sessionConfig.urlCache = nil
+        sessionConfig.httpAdditionalHeaders = httpHeader
+
+        let sessionManager = SessionManager(configuration: sessionConfig)
+        sessionManager.startRequestsImmediately = true
     }
 }
