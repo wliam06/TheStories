@@ -25,12 +25,13 @@ class PhotoViewCell: UICollectionViewCell {
 
     static func cellSize(width: CGFloat) -> CGSize {
         let collectionWidth = width - 1
-        return CGSize(width: collectionWidth / 2 - 1 / 2, height: collectionWidth / 2 + 50)
+        return CGSize(width: collectionWidth / 2 - 1 / 2, height: collectionWidth / 2 + 85)
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func prepareForReuse() {
+        self.photoImageView.image = nil
+
+        super.prepareForReuse()
     }
 
     fileprivate func didSetPhotoItem() {
@@ -40,7 +41,7 @@ class PhotoViewCell: UICollectionViewCell {
         photoImageView.af_cancelImageRequest()
 
         if let url = URL(string: photo.urls?.raw ?? "") {
-            photoImageView.af_setImage(withURL: url)
+            photoImageView.af_setImage(withURL: url, placeholderImage: photoImageView.image)
         }
     }
 }

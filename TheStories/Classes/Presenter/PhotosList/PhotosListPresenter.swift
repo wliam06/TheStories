@@ -20,12 +20,24 @@ class PhotosListPresenter: PhotosListEvent, PhotosListInteractorOutput {
         self.router = router
     }
 
-    func onRequestListPhotos() {
-        interactor.requestListPhotos()
+    // Input
+//    func onRequestListPhotos(withPageNum pageNum: Int) {
+//        interactor.requestListPhotos(withPageNum: pageNum)
+//    }
+
+    func onRequestListPhotos(withPhoto photos: [Photo], withPageNum pageNum: Int) {
+        interactor.requestListPhotos(withPhotos: photos, pageNum: pageNum)
     }
 
     // output
-    func foundListPhotos(withPhotos photos: [Photo]) {
-        view?.showListPhotos(withPhotos: photos)
+//    func foundListPhotos(withPhotos photos: [Photo], nextPage: Int) {
+//        view?.showListPhotos(withPhotos: photos, page: nextPage)
+//    }
+    func foundListPhotos(withPhotos photos: [Photo], page: Int) {
+        view?.showListPhotos(withPhotos: photos, page: page)
+    }
+
+    func foundErrorRequest(error: ErrorRespond) {
+        // Error View
     }
 }

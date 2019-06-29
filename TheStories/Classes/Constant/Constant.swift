@@ -17,4 +17,6 @@ struct Constant {
     // Services
     static let page = "page"
     static let perPage = "per_page"
+
+    static let numberOfPage = 30
 }
