@@ -36,6 +36,16 @@ struct Photo: Codable, Equatable {
         self.urls = try container.decodeIfPresent(ImageURL.self, forKey: .urls)
     }
 
+    func encode(to encode: Encoder) throws {
+        var container = encode.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(updatedAt, forKey: .updatedAt)
+        try container.encode(width, forKey: .width)
+        try container.encode(height, forKey: .height)
+        try container.encodeIfPresent(urls, forKey: .urls)
+    }
+
     static func == (lhs: Photo, rhs: Photo) -> Bool {
         return lhs.id == rhs.id && lhs.createdAt == rhs.createdAt
     }

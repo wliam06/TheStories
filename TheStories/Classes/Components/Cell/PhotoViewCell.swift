@@ -23,24 +23,26 @@ class PhotoViewCell: UICollectionViewCell {
         return String(describing: self)
     }
 
-    static func cellSize(width: CGFloat) -> CGSize {
-        let collectionWidth = width - 1
-        return CGSize(width: collectionWidth / 2 - 1 / 2, height: collectionWidth / 2 + 85)
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        photoImageView.image = UIImage.backgroundImage(withColor: .liteGrey)
     }
 
-    override func prepareForReuse() {
-        self.photoImageView.image = nil
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.apply(layoutAttributes)
 
-        super.prepareForReuse()
+        if let attributes = layoutAttributes as? CollectionLayoutAttribute {
+            photoImageView.frame.size.height = attributes.imageHeight
+        }
     }
 
     fileprivate func didSetPhotoItem() {
         guard let photo = photoItem else { return }
 
-        photoImageView.image = UIImage.backgroundImage(withColor: .lightGray)
         photoImageView.af_cancelImageRequest()
 
-        if let url = URL(string: photo.urls?.raw ?? "") {
+        if let url = URL(string: photo.urls?.regular ?? "") {
             photoImageView.af_setImage(withURL: url, placeholderImage: photoImageView.image)
         }
     }

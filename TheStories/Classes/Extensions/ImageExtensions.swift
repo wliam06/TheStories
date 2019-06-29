@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 extension UIImage {
     static func backgroundImage(withColor color: UIColor) -> UIImage? {
@@ -28,5 +29,20 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return image
+    }
+
+    public func setHeight(forWidth width: CGFloat) -> CGFloat {
+        let boundingRect = CGRect(
+            x: 0,
+            y: 0,
+            width: width,
+            height: CGFloat(MAXFLOAT)
+        )
+        let rect = AVMakeRect(
+            aspectRatio: size,
+            insideRect: boundingRect
+        )
+
+        return rect.size.height
     }
 }
