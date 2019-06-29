@@ -9,12 +9,12 @@
 import Foundation
 
 struct Photo: Codable, Equatable {
-    let id: String = ""
-    let createdAt: String = ""
-    let updatedAt: String = ""
-    let width: String = ""
-    let height: String = ""
-    let urls: ImageURL?
+    var id: String
+    var createdAt: String
+    var updatedAt: String
+    var width: Int
+    var height: Int
+    var urls: ImageURL?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,6 +23,17 @@ struct Photo: Codable, Equatable {
         case width
         case height
         case urls
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        self.id = try container.decode(String.self, forKey: .id)
+        self.createdAt = try container.decode(String.self, forKey: .createdAt)
+        self.updatedAt = try container.decode(String.self, forKey: .updatedAt)
+        self.width = try container.decode(Int.self, forKey: .width)
+        self.height = try container.decode(Int.self, forKey: .height)
+        self.urls = try container.decodeIfPresent(ImageURL.self, forKey: .urls)
     }
 
     static func == (lhs: Photo, rhs: Photo) -> Bool {
