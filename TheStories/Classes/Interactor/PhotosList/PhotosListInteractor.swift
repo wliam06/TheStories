@@ -11,8 +11,9 @@ import Foundation
 class PhotosListInteractor: PhotosListInteractorInput {
     weak var output: PhotosListInteractorOutput?
 
-    func requestListPhotos(withPhotos photos: [Photo], pageNum: Int) {
-        PhotosService().listPhotos(pageNum: pageNum) { [weak self] (response, error) in
+    // Request photos list
+    func requestListPhotos(withPhotos photos: [Photo], startPage: Int, perPage: Int) {
+        PhotosService().listPhotos(pageNum: startPage, perPage: perPage) { [weak self] (response, error) in
             if let error = error {
                 self?.output?.foundErrorRequest(error: error)
                 return
@@ -21,8 +22,7 @@ class PhotosListInteractor: PhotosListInteractorInput {
             var photos = photos
 
             guard let result = response else {
-                self?.output?.foundListPhotos(withPhotos: photos, page: pageNum)
-
+                self?.output?.foundListPhotos(withPhotos: photos, page: 0)
                 return
             }
 
@@ -38,7 +38,7 @@ class PhotosListInteractor: PhotosListInteractorInput {
                 }
             }
 
-            self?.output?.foundListPhotos(withPhotos: photos, page: pageNum)
+            self?.output?.foundListPhotos(withPhotos: photos, page: startPage + perPage)
         }
     }
 }

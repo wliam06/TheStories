@@ -29,6 +29,7 @@ class PhotoViewCell: UICollectionViewCell {
         photoImageView.image = UIImage.backgroundImage(withColor: .liteGrey)
     }
 
+    // Collection layout attributes
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         super.apply(layoutAttributes)
 
@@ -41,6 +42,7 @@ class PhotoViewCell: UICollectionViewCell {
         guard let photo = photoItem else { return }
 
         photoImageView.af_cancelImageRequest()
+        photoImageView.image = UIImage.backgroundImage(withColor: .liteGrey)
 
         if let url = URL(string: photo.urls?.regular ?? "") {
             photoImageView.af_setImage(withURL: url, placeholderImage: photoImageView.image)

@@ -16,20 +16,18 @@ class PhotosListViewController: UIViewController, PhotosListView {
     private(set) var photosList = [Photo]()
     private(set) var isLoading = true
     private(set) var position = 0
-    private(set) var perPage = 10
 
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // With photo object, first page and number of page
-        event?.onRequestListPhotos(withPhoto: photosList, withPageNum: 1)
+        event?.onRequestListPhotos(withPhoto: photosList, startPage: 0, perPage: Constant.numberOfPage)
 
         configureCollectionView()
     }
 
     private func configureCollectionView() {
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
         let layout: CollectionLayout = {
             if let layout = collectionView.collectionViewLayout as? CollectionLayout {
                 return layout
@@ -50,13 +48,13 @@ class PhotosListViewController: UIViewController, PhotosListView {
                                 forCellWithReuseIdentifier: PhotoViewCell.reuseIdentifier())
     }
 
-    // View
+    // MARK: - View
     func showListPhotos(withPhotos photos: [Photo], page: Int) {
         collectionView.performBatchUpdates({
             var indexPath = [IndexPath]()
             var index = 0
 
-            for row in position..<photos.count {
+            for row in position..<page {
                 self.photosList.append(photos[index])
 
                 indexPath.append(IndexPath(row: row, section: 0))
@@ -71,6 +69,7 @@ class PhotosListViewController: UIViewController, PhotosListView {
     }
 }
 
+// MARK: - CollectionLayoutDelegate
 extension PhotosListViewController: CollectionLayoutDelegate {
     func collectionView(collectionView: UICollectionView,
                         sizeForItemAtIndexPath indexPath: IndexPath, width: CGFloat) -> CGFloat {
@@ -78,19 +77,20 @@ extension PhotosListViewController: CollectionLayoutDelegate {
                                                             for: indexPath) as? PhotoViewCell else {
                                                                 return 0
         }
-//        if let cellImageView = cell.photoImageView, let image = cellImageView.image {
-//            return image.setHeight(forWidth: width)
-//        } else {
-//            return 0
-//        }
-        return 200
+
+        if let cellImageView = cell.photoImageView,
+            let image = cellImageView.image {
+            return image.setHeight(forWidth: width)
+        } else {
+            return 0
+        }
     }
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photosList.count
-//        return self.photosList.count
+        return self.photosList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
@@ -115,20 +115,8 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
         if isLoading == false, percentScrolled >= 0.8 {
             isLoading = true
 
-            self.position += 1
-            event?.onRequestListPhotos(withPhoto: self.photosList, withPageNum: position)
+            debugPrint("withPosition", position)
+            event?.onRequestListPhotos(withPhoto: photosList, startPage: position, perPage: Constant.numberOfPage)
         }
-    }
-}
-
-extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
     }
 }
