@@ -16,6 +16,7 @@ class PhotoViewCell: UICollectionViewCell {
         }
     }
 
+    @IBOutlet weak var photoView: UIView!
     @IBOutlet weak var photoImageView: UIImageView!
 
     // MARK: - Reuse identifier
@@ -35,6 +36,7 @@ class PhotoViewCell: UICollectionViewCell {
 
         if let attributes = layoutAttributes as? CollectionLayoutAttribute {
             photoImageView.frame.size.height = attributes.imageHeight
+//            photoImageHeightConstraint.constant = attributes.imageHeight
         }
     }
 

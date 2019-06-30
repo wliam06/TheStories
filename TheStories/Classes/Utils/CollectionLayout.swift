@@ -75,9 +75,12 @@ class CollectionLayout: UICollectionViewLayout {
                 var column = yOffsets.firstIndex(of: yOffsets.min() ?? 0) ?? 0
                 let imageHeight = delegate?.collectionView(collectionView: collectionView,
                                                            sizeForItemAtIndexPath: indexPath, width: cellWidth) ?? 0
-                let cellContentHeight = imageHeight * columnWidth / cellWidth
 
-                let cellHeight = cellPadding + cellContentHeight
+                
+//                let cellContentHeight = imageHeight * columnWidth / cellWidth
+
+//                let cellHeight = cellPadding + cellContentHeight
+                let cellHeight = cellPadding + imageHeight + cellPadding
 
                 let frame = CGRect(
                     x: xOffsets[column],

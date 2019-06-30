@@ -16,18 +16,26 @@ class PhotosListViewController: UIViewController, PhotosListView {
     private(set) var photosList = [Photo]()
     private(set) var isLoading = true
     private(set) var position = 0
+    private(set) var estimatedHeight: CGFloat = 0
+
+    private(set) var searchViewController = UISearchController(searchResultsController: nil)
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureSearchBar()
         // With photo object, first page and number of page
         event?.onRequestListPhotos(withPhoto: photosList, startPage: 0, perPage: Constant.numberOfPage)
 
         configureCollectionView()
     }
 
+    private func configureSearchBar() {
+        self.navigationItem.titleView = searchViewController.searchBar
+    }
+
     private func configureCollectionView() {
+        collectionView.contentInset = UIEdgeInsets(top: 8, left: 5, bottom: 49, right: 5)
         let layout: CollectionLayout = {
             if let layout = collectionView.collectionViewLayout as? CollectionLayout {
                 return layout
@@ -78,12 +86,34 @@ extension PhotosListViewController: CollectionLayoutDelegate {
                                                                 return 0
         }
 
+        debugPrint("width", width)
         if let cellImageView = cell.photoImageView,
             let image = cellImageView.image {
+
             return image.setHeight(forWidth: width)
         } else {
             return 0
         }
+
+        // 2
+//        var estimatedHeight: CGFloat = (CGFloat(width) * ratio)
+
+//            let width = imagePhoto.width
+//            let height = imagePhoto.height
+//
+//            let ratio = CGFloat(height / width)
+//        for index in 0..<photosList.count {
+//            let width = photosList[index].width
+//            let height = photosList[index].height
+//
+//            let ratio = (collectionView.frame.size.width / 2) * CGFloat(height / width)
+//
+//            if let cellImageView = cell.photoImageView, let image = cellImageView.image {
+//                let ration = image.ratioImage(image: image, scaledWidth: collectionView.frame.size.width / 2)
+//                debugPrint("ration", ration)
+//            }
+//        }
+//        return 200
     }
 }
 

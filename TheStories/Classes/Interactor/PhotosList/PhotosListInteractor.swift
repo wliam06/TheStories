@@ -18,7 +18,7 @@ class PhotosListInteractor: PhotosListInteractorInput {
                 self?.output?.foundErrorRequest(error: error)
                 return
             }
-
+    
             var photos = photos
 
             guard let result = response else {

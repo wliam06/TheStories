@@ -15,7 +15,6 @@ class PhotosListRouter: Router {
         let presenter = PhotosListPresenter(view: view, interactor: interactor, router: self)
 
         let navigationController = UINavigationController(rootViewController: view)
-        navigationController.isNavigationBarHidden = true
 
         view.event = presenter
         interactor.output = presenter
