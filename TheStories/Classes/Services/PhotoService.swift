@@ -14,7 +14,7 @@ class PhotosService {
     init() {}
 
     func listPhotos(pageNum: Int, perPage: Int, completion: @escaping OnCompletion) {
-        let param: [String: Any] = [Constant.page: pageNum, Constant.perPage: perPage]
+        let param: [String: Any] = [Constant.page.rawValue: pageNum, Constant.perPage.rawValue: perPage]
 
         let url = PhotosPath.photos(param: param)
         _ = ServiceManager.api.request(url) { (_, responseObject, error) in

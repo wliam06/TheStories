@@ -11,6 +11,10 @@ import UIKit
 class PhotosListInteractor: PhotosListInteractorInput {
     weak var output: PhotosListInteractorOutput?
 
+    // Request search keyword
+    func requestBySearchKeyword(keyword: String) {
+    }
+
     // Request photos list
     func requestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel]) {
         PhotosService().listPhotos(pageNum: startPage, perPage: perPage) { [weak self] (response, error) in

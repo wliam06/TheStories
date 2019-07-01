@@ -10,6 +10,8 @@ import Foundation
 
 protocol PhotosListInteractorInput: class {
     func requestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel])
+
+    func requestBySearchKeyword(keyword: String)
 }
 
 protocol PhotosListInteractorOutput: class {

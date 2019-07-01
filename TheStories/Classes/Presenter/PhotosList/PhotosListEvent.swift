@@ -10,4 +10,6 @@ import Foundation
 
 protocol PhotosListEvent: class {
     func onRequestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel])
+
+    func searchKeyword(keyword: String)
 }

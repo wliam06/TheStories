@@ -25,7 +25,7 @@ class PhotosListViewController: UIViewController, PhotosListView {
     private(set) var estimatedHeight: CGFloat = 0
     private(set) var position = 0
 
-    private(set) var searchViewController = UISearchController(searchResultsController: nil)
+    private(set) var searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -33,8 +33,16 @@ class PhotosListViewController: UIViewController, PhotosListView {
 
         navigationItem.title = "The Stories"
 
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Stories"
+        searchController.searchBar.becomeFirstResponder()
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+
+        searchController.searchBar.delegate = self
+
         // With photo object, first page and number of page
-        event?.onRequestListPhotos(startPage: 1, perPage: Constant.numberOfPage, imageViewModel: images)
+        event?.onRequestListPhotos(startPage: 1, perPage: 30, imageViewModel: images)
 
         configureCollectionView()
     }
@@ -115,8 +123,19 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
             isLoading = true
 
             event?.onRequestListPhotos(startPage: position,
-                                       perPage: Constant.numberOfPage + self.photosList.count,
+                                       perPage: 30 + self.photosList.count,
                                        imageViewModel: images)
         }
+    }
+}
+
+extension PhotosListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text else { return }
+
+        event?.searchKeyword(keyword: keyword)
+
+        searchController.searchBar.resignFirstResponder()
+        view.endEditing(true)
     }
 }
