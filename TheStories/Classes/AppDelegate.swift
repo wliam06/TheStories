@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         initializeService()
 
-        window?.rootViewController = PhotosListRouter().controller
+        window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
+
         return true
     }
 
