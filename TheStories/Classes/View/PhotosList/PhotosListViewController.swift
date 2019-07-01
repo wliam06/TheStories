@@ -30,16 +30,13 @@ class PhotosListViewController: UIViewController, PhotosListView {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureSearchBar()
+
+        navigationItem.title = "The Stories"
 
         // With photo object, first page and number of page
         event?.onRequestListPhotos(startPage: 1, perPage: Constant.numberOfPage, imageViewModel: images)
 
         configureCollectionView()
-    }
-
-    private func configureSearchBar() {
-        self.navigationItem.titleView = searchViewController.searchBar
     }
 
     private func configureCollectionView() {
@@ -89,7 +86,7 @@ extension PhotosListViewController: CustomLayoutDelegate {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images.count
+         return self.images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
