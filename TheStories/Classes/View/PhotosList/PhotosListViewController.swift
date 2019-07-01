@@ -8,54 +8,62 @@
 
 import UIKit
 
+struct ImageViewModel {
+    let image: UIImage
+}
+
 class PhotosListViewController: UIViewController, PhotosListView {
     var event: PhotosListEvent?
 
     @IBOutlet weak var collectionView: UICollectionView!
 
     private(set) var photosList = [Photo]()
+    private(set) var images = [ImageViewModel]()
+
     private(set) var isLoading = true
+    private(set) var totalPage = 0
+    private(set) var estimatedHeight: CGFloat = 0
     private(set) var position = 0
+
+    private(set) var searchViewController = UISearchController(searchResultsController: nil)
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureSearchBar()
 
         // With photo object, first page and number of page
-        event?.onRequestListPhotos(withPhoto: photosList, startPage: 0, perPage: Constant.numberOfPage)
+        event?.onRequestListPhotos(startPage: 1, perPage: Constant.numberOfPage, imageViewModel: images)
 
         configureCollectionView()
     }
 
+    private func configureSearchBar() {
+        self.navigationItem.titleView = searchViewController.searchBar
+    }
+
     private func configureCollectionView() {
-        let layout: CollectionLayout = {
-            if let layout = collectionView.collectionViewLayout as? CollectionLayout {
-                return layout
-            }
-
-            let layout = CollectionLayout()
-
-            collectionView.collectionViewLayout = layout
-
-            return layout
-        }()
-        layout.delegate = self
-        layout.cellPadding = 1
-        layout.numberOfColumns = 2
+        // Customize UICollectionViewLayout
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
         // Register cell
         collectionView.register(UINib(nibName: PhotoViewCell.reuseIdentifier(), bundle: nil),
                                 forCellWithReuseIdentifier: PhotoViewCell.reuseIdentifier())
+
+        let customLayout = CustomLayout()
+        customLayout.delegate = self
+        collectionView.collectionViewLayout = customLayout
     }
 
     // MARK: - View
-    func showListPhotos(withPhotos photos: [Photo], page: Int) {
+    func showListPhotos(withPhotos photos: [Photo], page: Int, imageViewModel: [ImageViewModel]) {
         collectionView.performBatchUpdates({
             var indexPath = [IndexPath]()
             var index = 0
 
-            for row in position..<page {
+            for row in totalPage..<page {
                 self.photosList.append(photos[index])
+                self.images.append(imageViewModel[index])
 
                 indexPath.append(IndexPath(row: row, section: 0))
                 index += 1
@@ -65,32 +73,23 @@ class PhotosListViewController: UIViewController, PhotosListView {
         }, completion: nil)
 
         self.isLoading = false
-        self.position = page
+        self.totalPage = page
+        self.position += 1
+
+        self.collectionView.reloadData()
     }
 }
 
-// MARK: - CollectionLayoutDelegate
-extension PhotosListViewController: CollectionLayoutDelegate {
-    func collectionView(collectionView: UICollectionView,
-                        sizeForItemAtIndexPath indexPath: IndexPath, width: CGFloat) -> CGFloat {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoViewCell.reuseIdentifier(),
-                                                            for: indexPath) as? PhotoViewCell else {
-                                                                return 0
-        }
-
-        if let cellImageView = cell.photoImageView,
-            let image = cellImageView.image {
-            return image.setHeight(forWidth: width)
-        } else {
-            return 0
-        }
+extension PhotosListViewController: CustomLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, sizeOfPhotoAtIndexPath indexPath: IndexPath) -> CGSize {
+        return images[indexPath.item].image.size
     }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photosList.count
+        return self.images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
@@ -98,7 +97,9 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
         switch cell {
         case is PhotoViewCell:
             guard let cell = cell as? PhotoViewCell else { return }
-            cell.photoItem = photosList[indexPath.row]
+
+            let image = images[indexPath.item].image
+            cell.photoImageView.image = image
         default:
             break
         }
@@ -106,7 +107,8 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: PhotoViewCell.reuseIdentifier(), for: indexPath)
+        return collectionView.dequeueReusableCell(withReuseIdentifier: PhotoViewCell.reuseIdentifier(),
+                                                  for: indexPath)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -115,8 +117,9 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
         if isLoading == false, percentScrolled >= 0.8 {
             isLoading = true
 
-            debugPrint("withPosition", position)
-            event?.onRequestListPhotos(withPhoto: photosList, startPage: position, perPage: Constant.numberOfPage)
+            event?.onRequestListPhotos(startPage: position,
+                                       perPage: Constant.numberOfPage + self.photosList.count,
+                                       imageViewModel: images)
         }
     }
 }

@@ -9,12 +9,11 @@
 import Foundation
 
 protocol PhotosListInteractorInput: class {
-    func requestListPhotos(withPhotos photos: [Photo], startPage: Int, perPage: Int)
-//    func requestListPhotos(withPhotos photos: [Photo], pageNum: Int)
+    func requestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel])
 }
 
 protocol PhotosListInteractorOutput: class {
-    func foundListPhotos(withPhotos photos: [Photo], page: Int)
+    func foundListPhotos(withPhotos photos: [Photo], page: Int, imageModel: [ImageViewModel])
 
     func foundErrorRequest(error: ErrorRespond)
 }
