@@ -30,11 +30,16 @@ class PhotosListViewController: UIViewController, PhotosListView {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSearchBar()
+
         // With photo object, first page and number of page
         event?.onRequestListPhotos(withPhoto: photosList, startPage: 0,
                                    perPage: Constant.numberOfPage, imageViewModel: images)
 
         configureCollectionView()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
 
     private func configureSearchBar() {
@@ -43,23 +48,15 @@ class PhotosListViewController: UIViewController, PhotosListView {
 
     private func configureCollectionView() {
         // Customize UICollectionViewLayout
-        let flowLayout: PinterestLayout = {
-            if let layout = collectionView.collectionViewLayout as? PinterestLayout {
-                return layout
-            }
-
-            let layout = PinterestLayout()
-            collectionView.collectionViewLayout = layout
-
-            return layout
-        }()
-        flowLayout.delegate = self
-
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
         // Register cell
         collectionView.register(UINib(nibName: PhotoViewCell.reuseIdentifier(), bundle: nil),
                                 forCellWithReuseIdentifier: PhotoViewCell.reuseIdentifier())
+
+        let customLayout = CustomLayout()
+        customLayout.delegate = self
+        collectionView.collectionViewLayout = customLayout
     }
 
     // MARK: - View
@@ -81,17 +78,12 @@ class PhotosListViewController: UIViewController, PhotosListView {
 
         self.isLoading = false
         self.position = page
-        self.collectionView.reloadData()
     }
 }
 
-extension PhotosListViewController: PinterestLayoutDelegate {
-    func collectionView(_ collectionView: UICollectionView,
-                        heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        let image = images[indexPath.item].image
-        let height = image.size.height
-
-        return height
+extension PhotosListViewController: CustomLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, sizeOfPhotoAtIndexPath indexPath: IndexPath) -> CGSize {
+        return images[indexPath.item].image.size
     }
 }
 
@@ -101,18 +93,23 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
         return self.images.count
     }
 
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        switch cell {
+        case is PhotoViewCell:
+            guard let cell = cell as? PhotoViewCell else { return }
+
+            let image = images[indexPath.item].image
+            cell.photoImageView.image = image
+        default:
+            break
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoViewCell.reuseIdentifier(),
-                                                            for: indexPath) as? PhotoViewCell else {
-            return UICollectionViewCell()
-        }
-
-        let image = images[indexPath.item].image
-        print("image", image)
-        cell.photoImageView.image = image
-
-        return cell
+        return collectionView.dequeueReusableCell(withReuseIdentifier: PhotoViewCell.reuseIdentifier(),
+                                                  for: indexPath)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

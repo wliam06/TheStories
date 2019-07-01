@@ -16,7 +16,6 @@ class PhotoViewCell: UICollectionViewCell {
         }
     }
 
-    
     @IBOutlet weak var photoImageView: UIImageView!
 
     // MARK: - Reuse identifier
@@ -31,6 +30,13 @@ class PhotoViewCell: UICollectionViewCell {
     }
 
     private func didSetPhotoImage() {
-        
+        guard let photo = photo else { return }
+
+        photoImageView.af_cancelImageRequest()
+        photoImageView.image = UIImage.backgroundImage(withColor: .liteGrey)
+
+        if let url = URL(string: photo.urls?.regular ?? "") {
+            photoImageView.af_setImage(withURL: url, placeholderImage: photoImageView.image)
+        }
     }
 }

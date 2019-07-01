@@ -19,7 +19,7 @@ class PhotosListInteractor: PhotosListInteractorInput {
                 self?.output?.foundErrorRequest(error: error)
                 return
             }
-    
+
             var photos = photos
             var imageModels = imageViewModel
 
@@ -40,13 +40,12 @@ class PhotosListInteractor: PhotosListInteractorInput {
                         debugPrint("No photo url")
                         return
                     }
-                    
+
                     guard let image = UIImage(data: smallPhoto) else {
                         // No Image
                         return
                     }
 
-                    
                     imageModels.append(ImageViewModel(image: image))
 
                     photos.append(photo)
