@@ -21,8 +21,12 @@ class PhotosListPresenter: PhotosListEvent, PhotosListInteractorOutput {
     }
 
     // Input
-    func onRequestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel]) {
-        interactor.requestListPhotos(startPage: startPage, perPage: perPage, imageViewModel: imageViewModel)
+    func onRequestListPhotos(startPage: Int, perPage: Int) {
+        interactor.requestListPhotos(startPage: startPage, perPage: perPage)
+    }
+
+    func onSearch(keyword: String, startPage: Int, perPage: Int) {
+        interactor.requestSearchByKeyword(keyword: keyword, startPage: startPage, perPage: perPage)
     }
 
     // output

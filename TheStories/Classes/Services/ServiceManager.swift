@@ -12,15 +12,15 @@ typealias OnFailure = (ErrorRespond?) -> Void
 
 class ServiceManager {
     public var baseURL: String {
-        return Constant.baseUrl
+        return Constant.baseUrl.rawValue
     }
 
     static var unsplashHTTPHeaders: HTTPHeaders {
         return [
-            "Accept": Constant.applicationJson,
-            "Content-Type": Constant.applicationJson,
-            "Accept-Version": Constant.apiVersion,
-            "Authorization": Constant.clientID
+            "Accept": Constant.applicationJson.rawValue,
+            "Content-Type": Constant.applicationJson.rawValue,
+            "Accept-Version": Constant.apiVersion.rawValue,
+            "Authorization": Constant.clientID.rawValue
         ]
     }
 
