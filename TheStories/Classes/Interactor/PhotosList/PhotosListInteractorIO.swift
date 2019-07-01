@@ -9,8 +9,7 @@
 import Foundation
 
 protocol PhotosListInteractorInput: class {
-    func requestListPhotos(withPhotos photos: [Photo], startPage: Int,
-                           perPage: Int, imageViewModel: [ImageViewModel])
+    func requestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel])
 }
 
 protocol PhotosListInteractorOutput: class {

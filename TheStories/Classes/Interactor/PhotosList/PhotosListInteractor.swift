@@ -12,16 +12,15 @@ class PhotosListInteractor: PhotosListInteractorInput {
     weak var output: PhotosListInteractorOutput?
 
     // Request photos list
-    func requestListPhotos(withPhotos photos: [Photo], startPage: Int,
-                           perPage: Int, imageViewModel: [ImageViewModel]) {
+    func requestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel]) {
         PhotosService().listPhotos(pageNum: startPage, perPage: perPage) { [weak self] (response, error) in
             if let error = error {
                 self?.output?.foundErrorRequest(error: error)
                 return
             }
 
-            var photos = photos
-            var imageModels = imageViewModel
+            var photos = [Photo]()
+            var imageModels = [ImageViewModel]()
 
             guard let result = response else {
                 self?.output?.foundListPhotos(withPhotos: photos,
@@ -41,6 +40,7 @@ class PhotosListInteractor: PhotosListInteractorInput {
                         return
                     }
 
+                    // Get image
                     guard let image = UIImage(data: smallPhoto) else {
                         // No Image
                         return
@@ -55,7 +55,7 @@ class PhotosListInteractor: PhotosListInteractorInput {
             }
 
             self?.output?.foundListPhotos(withPhotos: photos,
-                                          page: startPage + perPage, imageModel: imageModels)
+                                          page: perPage, imageModel: imageModels)
         }
     }
 }

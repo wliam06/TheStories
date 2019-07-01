@@ -9,6 +9,5 @@
 import Foundation
 
 protocol PhotosListEvent: class {
-    func onRequestListPhotos(withPhoto photos: [Photo],
-                             startPage: Int, perPage: Int, imageViewModel: [ImageViewModel])
+    func onRequestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel])
 }

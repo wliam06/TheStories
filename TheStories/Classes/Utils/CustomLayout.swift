@@ -36,9 +36,9 @@ class CustomLayout: UICollectionViewLayout {
     }
 
     override func prepare() {
-        guard cache.isEmpty,
-            let collectionView = collectionView,
-            collectionView.numberOfSections > 0 else { return }
+        guard cache.isEmpty == true || cache.isEmpty == false, let collectionView = collectionView else {
+            return
+        }
 
         let columnWidth = contentWidth / CGFloat(numberOfColumns)
         var xOffset = [CGFloat]()
@@ -56,7 +56,7 @@ class CustomLayout: UICollectionViewLayout {
             let size = delegate?.collectionView(collectionView,
                                                 sizeOfPhotoAtIndexPath: indexPath) ?? CGSize(width: 100, height: 100)
             let cellContentHeight = size.height * columnWidth / size.width
-            let height = cellPadding + cellContentHeight + cellPadding
+            let height = cellPadding + cellContentHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
 

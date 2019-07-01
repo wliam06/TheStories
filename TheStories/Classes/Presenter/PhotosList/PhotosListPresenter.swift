@@ -21,14 +21,13 @@ class PhotosListPresenter: PhotosListEvent, PhotosListInteractorOutput {
     }
 
     // Input
-    func onRequestListPhotos(withPhoto photos: [Photo], startPage: Int,
-                             perPage: Int, imageViewModel: [ImageViewModel]) {
-        interactor.requestListPhotos(withPhotos: photos, startPage: startPage,
-                                     perPage: perPage, imageViewModel: imageViewModel)
+    func onRequestListPhotos(startPage: Int, perPage: Int, imageViewModel: [ImageViewModel]) {
+        interactor.requestListPhotos(startPage: startPage, perPage: perPage, imageViewModel: imageViewModel)
     }
 
     // output
     func foundListPhotos(withPhotos photos: [Photo], page: Int, imageModel: [ImageViewModel]) {
+
         view?.showListPhotos(withPhotos: photos, page: page, imageViewModel: imageModel)
     }
 

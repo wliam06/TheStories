@@ -21,8 +21,9 @@ class PhotosListViewController: UIViewController, PhotosListView {
     private(set) var images = [ImageViewModel]()
 
     private(set) var isLoading = true
-    private(set) var position = 0
+    private(set) var totalPage = 0
     private(set) var estimatedHeight: CGFloat = 0
+    private(set) var position = 0
 
     private(set) var searchViewController = UISearchController(searchResultsController: nil)
 
@@ -32,14 +33,9 @@ class PhotosListViewController: UIViewController, PhotosListView {
         configureSearchBar()
 
         // With photo object, first page and number of page
-        event?.onRequestListPhotos(withPhoto: photosList, startPage: 0,
-                                   perPage: Constant.numberOfPage, imageViewModel: images)
+        event?.onRequestListPhotos(startPage: 1, perPage: Constant.numberOfPage, imageViewModel: images)
 
         configureCollectionView()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
 
     private func configureSearchBar() {
@@ -65,7 +61,7 @@ class PhotosListViewController: UIViewController, PhotosListView {
             var indexPath = [IndexPath]()
             var index = 0
 
-            for row in position..<page {
+            for row in totalPage..<page {
                 self.photosList.append(photos[index])
                 self.images.append(imageViewModel[index])
 
@@ -77,7 +73,10 @@ class PhotosListViewController: UIViewController, PhotosListView {
         }, completion: nil)
 
         self.isLoading = false
-        self.position = page
+        self.totalPage = page
+        self.position += 1
+
+        self.collectionView.reloadData()
     }
 }
 
@@ -118,8 +117,9 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
         if isLoading == false, percentScrolled >= 0.8 {
             isLoading = true
 
-            event?.onRequestListPhotos(withPhoto: photosList, startPage: position,
-                                       perPage: Constant.numberOfPage, imageViewModel: images)
+            event?.onRequestListPhotos(startPage: position,
+                                       perPage: Constant.numberOfPage + self.photosList.count,
+                                       imageViewModel: images)
         }
     }
 }

@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias Photos = [Photo]
-
 struct Photo: Codable, Equatable {
     var id: String
     var urls: ImageURL?
