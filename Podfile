@@ -6,10 +6,10 @@ use_frameworks!
 target 'TheStories' do
   pod 'Alamofire'
   pod 'AlamofireImage'
+end
 
-  target 'TheStoriesTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'TheStoriesTests' do
+  inherit! :search_paths
+  # Pods for testing
+  pod 'Alamofire'
 end

@@ -16,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+
+        initializeService()
+
+        window?.rootViewController = PhotosListRouter().controller
+        window?.makeKeyAndVisible()
         return true
+    }
+
+    private func initializeService() {
+        ServiceManager.startConnection()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
