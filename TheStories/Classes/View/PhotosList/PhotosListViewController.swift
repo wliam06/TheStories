@@ -42,7 +42,7 @@ class PhotosListViewController: UIViewController, PhotosListView {
         searchController.searchBar.delegate = self
 
         // With photo object, first page and number of page
-        event?.onRequestListPhotos(startPage: 1, perPage: 30, imageViewModel: images)
+        event?.onRequestListPhotos(startPage: 1, perPage: 30)
 
         configureCollectionView()
     }
@@ -123,8 +123,7 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
             isLoading = true
 
             event?.onRequestListPhotos(startPage: position,
-                                       perPage: 30 + self.photosList.count,
-                                       imageViewModel: images)
+                                       perPage: 30 + self.photosList.count)
         }
     }
 }
@@ -133,7 +132,7 @@ extension PhotosListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
 
-        event?.searchKeyword(keyword: keyword)
+        event?.onSearch(keyword: keyword, startPage: 1, perPage: 30)
 
         searchController.searchBar.resignFirstResponder()
         view.endEditing(true)
