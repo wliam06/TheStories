@@ -1,8 +1,0 @@
-language: objective-c
-osx_image: xcode10.2
-install:  
-  - pod install
-script:
-  - fastlane lint
-  - fastlane build
-  - fastlane test
