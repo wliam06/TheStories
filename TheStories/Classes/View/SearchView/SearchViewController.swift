@@ -22,6 +22,7 @@ class SearchViewController: UIViewController, SearchView {
     private(set) var totalPage = 0
     private(set) var position = 0
 
+    fileprivate var alertView: AlertView?
     fileprivate(set) var searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
@@ -83,6 +84,13 @@ class SearchViewController: UIViewController, SearchView {
         self.position += 1
 
         self.collectionView.reloadData()
+    }
+
+    func showErrorRequest(error: ErrorRespond) {
+        guard var alert = alertView else { return }
+
+        alert = AlertView(title: nil, message: error.message)
+        self.present(alert, animated: true, completion: nil)
     }
 
     private func cleanData() {

@@ -1,15 +1,25 @@
 //
-//  MockPhotosListView.swift
+//  MockSearchView.swift
 //  TheStoriesTests
 //
-//  Created by Wil Liam on 6/28/19.
+//  Created by William on 02/07/19.
 //  Copyright © 2019 William. All rights reserved.
 //
 
 import XCTest
 
 @testable import TheStories
-class MockPhotosListView: PhotosListView {
+class MockSearchView: SearchView {
+    var invokedShowErrorRequest = false
+    var invokedShowErrorRequestCount = 0
+    var invokedShowErrorRequestParameters: (error: ErrorRespond, Void)?
+    var invokedShowErrorRequestParametersList = [(error: ErrorRespond, Void)]()
+    func showErrorRequest(error: ErrorRespond) {
+        invokedShowErrorRequest = true
+        invokedShowErrorRequestCount += 1
+        invokedShowErrorRequestParameters = (error, ())
+        invokedShowErrorRequestParametersList.append((error, ()))
+    }
     var invokedShowListPhotos = false
     var invokedShowListPhotosCount = 0
     var invokedShowListPhotosParameters: (photos: [Photo], page: Int, imageViewModel: [ImageViewModel])?

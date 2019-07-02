@@ -29,5 +29,6 @@ class SearchViewPresenter: SearchViewEvent, SearchViewInteractorOutput {
 
     func foundErrorRequest(error: ErrorRespond) {
         // Error View
+        view?.showErrorRequest(error: error)
     }
 }

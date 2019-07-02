@@ -15,6 +15,9 @@
 		3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */; };
 		3D5D5A6F22C6835900EB4C3D /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5D5A6E22C6835900EB4C3D /* ImageExtensions.swift */; };
 		3D78342C22C7D7DD0018F8E9 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78342B22C7D7DD0018F8E9 /* ColorExtensions.swift */; };
+		3D889F4422CB2D480035DB6D /* MockSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4322CB2D480035DB6D /* MockSearchView.swift */; };
+		3D889F4622CB2D670035DB6D /* MockSearcViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */; };
+		3D889F4922CB2DD00035DB6D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4822CB2DD00035DB6D /* AlertView.swift */; };
 		3DCF38A422C61788003AAEFA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A322C61788003AAEFA /* ServiceManager.swift */; };
 		3DCF38A722C617BF003AAEFA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A622C617BF003AAEFA /* Constant.swift */; };
 		3DCF38AA22C617F1003AAEFA /* PhotosPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A922C617F1003AAEFA /* PhotosPath.swift */; };
@@ -80,6 +83,9 @@
 		3D33759222C4A7F1006EB9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5D5A6E22C6835900EB4C3D /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		3D78342B22C7D7DD0018F8E9 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		3D889F4322CB2D480035DB6D /* MockSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchView.swift; sourceTree = "<group>"; };
+		3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearcViewEvent.swift; sourceTree = "<group>"; };
+		3D889F4822CB2DD00035DB6D /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		3DCF38A322C61788003AAEFA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		3DCF38A622C617BF003AAEFA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3DCF38A922C617F1003AAEFA /* PhotosPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPath.swift; sourceTree = "<group>"; };
@@ -218,6 +224,23 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		3D889F4222CB2D3B0035DB6D /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				3D889F4322CB2D480035DB6D /* MockSearchView.swift */,
+				3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		3D889F4722CB2DC90035DB6D /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				3D889F4822CB2DD00035DB6D /* AlertView.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		3DCF389E22C61749003AAEFA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +263,7 @@
 		3DCF389F22C61749003AAEFA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3D889F4722CB2DC90035DB6D /* AlertView */,
 				3DCF38E422C620EF003AAEFA /* Cell */,
 			);
 			path = Components;
@@ -361,6 +385,7 @@
 		3DCF38C922C61AE7003AAEFA /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				3D889F4222CB2D3B0035DB6D /* SearchView */,
 				3DCF38D022C61B5E003AAEFA /* Service */,
 				3DCF38CF22C61B55003AAEFA /* PhotosList */,
 			);
@@ -772,6 +797,7 @@
 				3DF7BEA422CA6E750062FE82 /* SearchViewInteractor.swift in Sources */,
 				3DCF38BC22C6199E003AAEFA /* PhotosListInteractorIO.swift in Sources */,
 				3DCF38C522C619F8003AAEFA /* Router.swift in Sources */,
+				3D889F4922CB2DD00035DB6D /* AlertView.swift in Sources */,
 				3DCF38C822C61A16003AAEFA /* PhotosListRouter.swift in Sources */,
 				3D78342C22C7D7DD0018F8E9 /* ColorExtensions.swift in Sources */,
 			);
@@ -781,11 +807,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D889F4622CB2D670035DB6D /* MockSearcViewEvent.swift in Sources */,
 				3DCF38D622C61BAF003AAEFA /* MockPhotosListInteractorInput.swift in Sources */,
 				3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */,
 				3DCF38D822C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift in Sources */,
 				3DCF38DD22C61C26003AAEFA /* PhotosListViewTests.swift in Sources */,
 				3DCF38D422C61B94003AAEFA /* MockPhotosListEvent.swift in Sources */,
+				3D889F4422CB2D480035DB6D /* MockSearchView.swift in Sources */,
 				3DCF38D222C61B6B003AAEFA /* MockPhotosListView.swift in Sources */,
 				3DCF38AE22C6186E003AAEFA /* MockServiceManager.swift in Sources */,
 				3DCF38DA22C61BE6003AAEFA /* MockPhotosListRouter.swift in Sources */,

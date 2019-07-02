@@ -9,5 +9,7 @@
 import Foundation
 
 protocol SearchView: class {
+    func showErrorRequest(error: ErrorRespond)
+
     func showListPhotos(withPhotos photos: [Photo], page: Int, imageViewModel: [ImageViewModel])
 }
