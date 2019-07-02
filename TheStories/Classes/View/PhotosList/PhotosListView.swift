@@ -9,6 +9,5 @@
 import Foundation
 
 protocol PhotosListView: class {
-//    func showListPhotos(withPhotos photos: [Photo], page: Int)
-    func showListPhotos(withPhotos photos: [Photo], page: Int)
+    func showListPhotos(withPhotos photos: [Photo], page: Int, imageViewModel: [ImageViewModel])
 }
