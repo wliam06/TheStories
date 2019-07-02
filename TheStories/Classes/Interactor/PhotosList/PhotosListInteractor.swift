@@ -12,8 +12,9 @@ class PhotosListInteractor: PhotosListInteractorInput {
     weak var output: PhotosListInteractorOutput?
 
     // Request photos list
-    func requestListPhotos(startPage: Int, perPage: Int) {
-        PhotosService().listPhotos(pageNum: startPage, perPage: perPage) { [weak self] (response, error) in
+    func requestListPhotos(startPage: Int, perPage: Int, selectedBy: String) {
+        PhotosService().listPhotos(pageNum: startPage, perPage: perPage,
+                                   orderBy: selectedBy) { [weak self] (response, error) in
             if let error = error {
                 self?.output?.foundErrorRequest(error: error)
                 return

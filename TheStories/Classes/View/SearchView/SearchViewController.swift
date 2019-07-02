@@ -29,8 +29,6 @@ class SearchViewController: UIViewController, SearchView {
 
         navigationItem.title = "search"
 
-        activityIndicator.tintColor = .liteGrey
-
         configureSearchBar()
 
         configureCollectionView()
@@ -88,11 +86,15 @@ class SearchViewController: UIViewController, SearchView {
     }
 
     private func cleanData() {
-        self.images = [ImageViewModel]()
-        self.photosList = [Photo]()
-        self.totalPage = 0
-        self.position = 0
+        if images.count > 0 {
+            debugPrint("Cleaning data...")
 
+            self.images = [ImageViewModel]()
+            self.photosList = [Photo]()
+            self.totalPage = 0
+            self.position = 0
+            self.isLoading = true
+        }
     }
 }
 

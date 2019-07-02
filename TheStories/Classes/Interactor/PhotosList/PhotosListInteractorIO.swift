@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotosListInteractorInput: class {
-    func requestListPhotos(startPage: Int, perPage: Int)
+    func requestListPhotos(startPage: Int, perPage: Int, selectedBy: String)
 }
 
 protocol PhotosListInteractorOutput: class {

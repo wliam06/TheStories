@@ -21,8 +21,8 @@ class PhotosListPresenter: PhotosListEvent, PhotosListInteractorOutput {
     }
 
     // Input
-    func onRequestListPhotos(startPage: Int, perPage: Int) {
-        interactor.requestListPhotos(startPage: startPage, perPage: perPage)
+    func onRequestListPhotos(startPage: Int, perPage: Int, selectedType: String) {
+        interactor.requestListPhotos(startPage: startPage, perPage: perPage, selectedBy: selectedType)
     }
 
     // output
