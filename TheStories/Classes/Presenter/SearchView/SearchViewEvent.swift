@@ -8,4 +8,6 @@
 
 import Foundation
 
-protocol SearchViewEvent: class {}
+protocol SearchViewEvent: class {
+    func onSearch(keyword: String, startPage: Int, perPage: Int)
+}

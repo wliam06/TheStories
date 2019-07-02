@@ -33,14 +33,6 @@ class PhotosListViewController: UIViewController, PhotosListView {
 
         navigationItem.title = "The Stories"
 
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Stories"
-        searchController.searchBar.becomeFirstResponder()
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-
-        searchController.searchBar.delegate = self
-
         // With photo object, first page and number of page
         event?.onRequestListPhotos(startPage: 1, perPage: 30)
 
@@ -125,16 +117,5 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
             event?.onRequestListPhotos(startPage: position,
                                        perPage: 30 + self.photosList.count)
         }
-    }
-}
-
-extension PhotosListViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let keyword = searchBar.text else { return }
-
-        event?.onSearch(keyword: keyword, startPage: 1, perPage: 30)
-
-        searchController.searchBar.resignFirstResponder()
-        view.endEditing(true)
     }
 }
