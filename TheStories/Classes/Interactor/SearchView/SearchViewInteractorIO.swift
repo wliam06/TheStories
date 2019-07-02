@@ -9,7 +9,11 @@
 import Foundation
 
 protocol SearchViewInteractorInput: class {
+    func requestSearchByKeyword(keyword: String, startPage: Int, perPage: Int)
 }
 
 protocol SearchViewInteractorOutput: class {
+    func foundListPhotos(withPhotos photos: [Photo], page: Int, imageModel: [ImageViewModel])
+
+    func foundErrorRequest(error: ErrorRespond)
 }

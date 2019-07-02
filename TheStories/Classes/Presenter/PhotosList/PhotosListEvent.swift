@@ -10,6 +10,4 @@ import Foundation
 
 protocol PhotosListEvent: class {
     func onRequestListPhotos(startPage: Int, perPage: Int)
-
-    func onSearch(keyword: String, startPage: Int, perPage: Int)
 }

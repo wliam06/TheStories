@@ -18,4 +18,16 @@ class SearchViewPresenter: SearchViewEvent, SearchViewInteractorOutput {
         self.interactor = interactor
         self.router = router
     }
+
+    func onSearch(keyword: String, startPage: Int, perPage: Int) {
+        interactor.requestSearchByKeyword(keyword: keyword, startPage: startPage, perPage: perPage)
+    }
+
+    func foundListPhotos(withPhotos photos: [Photo], page: Int, imageModel: [ImageViewModel]) {
+        view?.showListPhotos(withPhotos: photos, page: page, imageViewModel: imageModel)
+    }
+
+    func foundErrorRequest(error: ErrorRespond) {
+        // Error View
+    }
 }

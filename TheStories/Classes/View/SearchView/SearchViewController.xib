@@ -12,7 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="TheStories" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="jaX-dX-AkV" id="Hi1-Wf-VNU"/>
+                <outlet property="activityIndicator" destination="27q-hh-AVH" id="xur-Ui-92b"/>
+                <outlet property="collectionView" destination="5gN-2r-Hga" id="xio-p6-kAc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,17 +22,32 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jaX-dX-AkV">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="27q-hh-AVH">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                </activityIndicatorView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5gN-2r-Hga">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zm3-B5-lZn">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ait-Ak-djP"/>
+                        <outlet property="delegate" destination="-1" id="kdo-ax-DGi"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jaX-dX-AkV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IZL-Ma-R9y"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jaX-dX-AkV" secondAttribute="bottom" id="Yqn-Xp-EUQ"/>
-                <constraint firstItem="jaX-dX-AkV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lf1-ES-Cso"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jaX-dX-AkV" secondAttribute="trailing" id="qpB-at-hjp"/>
+                <constraint firstItem="5gN-2r-Hga" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2j7-zF-2rF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5gN-2r-Hga" secondAttribute="trailing" id="4Xz-nc-GhI"/>
+                <constraint firstItem="27q-hh-AVH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JN4-xp-hpk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5gN-2r-Hga" secondAttribute="bottom" id="Pjp-tH-EcY"/>
+                <constraint firstItem="5gN-2r-Hga" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ftZ-9W-O1Q"/>
+                <constraint firstItem="27q-hh-AVH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sDk-1V-lpz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
