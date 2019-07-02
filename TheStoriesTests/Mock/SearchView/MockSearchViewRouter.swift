@@ -1,15 +1,15 @@
 //
-//  MockPhotosListRouter.swift
+//  MockSearchViewRouter.swift
 //  TheStoriesTests
 //
-//  Created by Wil Liam on 6/28/19.
+//  Created by William on 02/07/19.
 //  Copyright © 2019 William. All rights reserved.
 //
 
 import XCTest
 
 @testable import TheStories
-class MockPhotosListRouter: PhotosListRouter {
+class MockSearchViewRouter: SearchViewRouter {
     var invokedControllerGetter = false
     var invokedControllerGetterCount = 0
     var stubbedController: UIViewController!

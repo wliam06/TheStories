@@ -16,7 +16,7 @@ class SearchViewInteractor: SearchViewInteractorInput {
         SearchService().searchByKeyword(withKeyword: keyword, pageNum: startPage,
                                         perPage: perPage) { [weak self] (response, error) in
             if let error = error {
-//                self?.output?.foundErrorRequest(error: error)
+                self?.output?.foundErrorRequest(error: error)
                 return
             }
 

@@ -30,6 +30,7 @@ class PhotosListViewController: UIViewController, PhotosListView {
     private(set) var selectedIndex = 0
     private(set) var selectedTitle = ""
 
+    fileprivate var alertView: AlertView?
     private(set) var searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Life cycle
@@ -93,6 +94,13 @@ class PhotosListViewController: UIViewController, PhotosListView {
         self.position += 1
 
         self.collectionView.reloadData()
+    }
+
+    func showErrorResponse(error: ErrorRespond) {
+        guard var alert = alertView else { return }
+
+        alert = AlertView(title: nil, message: error.message)
+        self.present(alert, animated: true, completion: nil)
     }
 
     private func cleanData() {

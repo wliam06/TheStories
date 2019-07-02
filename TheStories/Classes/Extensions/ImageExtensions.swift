@@ -10,22 +10,6 @@ import UIKit
 import AVFoundation
 
 extension UIImage {
-    public func ratioImage(image: UIImage, scaledWidth: CGFloat) -> UIImage {
-        let oldWidth = image.size.width
-        let scaleFactor = scaledWidth / oldWidth
-
-        let newHeight = image.size.height * scaleFactor
-        let newWidth = oldWidth * scaleFactor
-
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
-    }
-
     static func backgroundImage(withColor color: UIColor) -> UIImage? {
         return backgroundImage(withColor: color, size: CGSize(width: 40, height: 40))
     }
@@ -45,20 +29,5 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return image
-    }
-
-    public func setHeight(forWidth width: CGFloat) -> CGFloat {
-        let boundingRect = CGRect(
-            x: 0,
-            y: 0,
-            width: width,
-            height: CGFloat(MAXFLOAT)
-        )
-        let rect = AVMakeRect(
-            aspectRatio: size,
-            insideRect: boundingRect
-        )
-
-        return rect.size.height
     }
 }

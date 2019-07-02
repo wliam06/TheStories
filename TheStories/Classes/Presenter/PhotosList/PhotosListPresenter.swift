@@ -27,11 +27,11 @@ class PhotosListPresenter: PhotosListEvent, PhotosListInteractorOutput {
 
     // output
     func foundListPhotos(withPhotos photos: [Photo], page: Int, imageModel: [ImageViewModel]) {
-
         view?.showListPhotos(withPhotos: photos, page: page, imageViewModel: imageModel)
     }
 
     func foundErrorRequest(error: ErrorRespond) {
         // Error View
+        view?.showErrorResponse(error: error)
     }
 }

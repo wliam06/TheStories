@@ -1,15 +1,15 @@
 //
-//  MockPhotosListInteractorOutput.swift
+//  MockSearchViewInteractorOutput.swift
 //  TheStoriesTests
 //
-//  Created by Wil Liam on 6/28/19.
+//  Created by William on 02/07/19.
 //  Copyright © 2019 William. All rights reserved.
 //
 
 import XCTest
 
 @testable import TheStories
-class MockPhotosListInteractorOutput: PhotosListInteractorOutput {
+class MockSearchViewInteractorOutput: SearchViewInteractorOutput {
     var invokedFoundListPhotos = false
     var invokedFoundListPhotosCount = 0
     var invokedFoundListPhotosParameters: (photos: [Photo], page: Int, imageModel: [ImageViewModel])?

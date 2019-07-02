@@ -9,5 +9,6 @@
 import Foundation
 
 protocol PhotosListView: class {
+    func showErrorResponse(error: ErrorRespond)
     func showListPhotos(withPhotos photos: [Photo], page: Int, imageViewModel: [ImageViewModel])
 }

@@ -1,5 +1,6 @@
 excluded:
   - Pods
+  - TheStoriesTests
 
 identifier_name:
   min_length: 2
