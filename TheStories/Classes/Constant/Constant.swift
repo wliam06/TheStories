@@ -18,4 +18,5 @@ enum Constant: String {
     case query
     case page
     case perPage = "per_page"
+    case orderBy = "order_by"
 }

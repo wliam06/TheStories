@@ -13,8 +13,10 @@ typealias OnCompletion = ([[String: Any]]?, ErrorRespond?) -> Void
 class PhotosService {
     init() {}
 
-    func listPhotos(pageNum: Int, perPage: Int, completion: @escaping OnCompletion) {
-        let param: [String: Any] = [Constant.page.rawValue: pageNum, Constant.perPage.rawValue: perPage]
+    func listPhotos(pageNum: Int, perPage: Int, orderBy: String, completion: @escaping OnCompletion) {
+        let param: [String: Any] = [Constant.page.rawValue: pageNum,
+                                    Constant.perPage.rawValue: perPage,
+                                    Constant.orderBy.rawValue: orderBy]
 
         let url = PhotosPath.photos(param: param)
         _ = ServiceManager.api.request(url) { (_, responseObject, error) in

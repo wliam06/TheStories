@@ -16,6 +16,8 @@ class PhotosListViewController: UIViewController, PhotosListView {
     var event: PhotosListEvent?
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
 
     private(set) var photosList = [Photo]()
     private(set) var images = [ImageViewModel]()
@@ -25,18 +27,32 @@ class PhotosListViewController: UIViewController, PhotosListView {
     private(set) var estimatedHeight: CGFloat = 0
     private(set) var position = 0
 
+    private(set) var selectedIndex = 0
+    private(set) var selectedTitle = ""
+
     private(set) var searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - Life cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+
+        self.view.backgroundColor = .whiteGray
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "The Stories"
-
-        // With photo object, first page and number of page
-        event?.onRequestListPhotos(startPage: 1, perPage: 30)
-
         configureCollectionView()
+
+        let index = segmentControl.selectedSegmentIndex
+        if let title = segmentControl.titleForSegment(at: index), index == 0 {
+            selectedTitle = title.lowercased()
+
+            event?.onRequestListPhotos(startPage: 1, perPage: 30, selectedType: title)
+        }
     }
 
     private func configureCollectionView() {
@@ -69,11 +85,58 @@ class PhotosListViewController: UIViewController, PhotosListView {
             collectionView.insertItems(at: indexPath)
         }, completion: nil)
 
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+
         self.isLoading = false
         self.totalPage = page
         self.position += 1
 
         self.collectionView.reloadData()
+    }
+
+    private func cleanData() {
+        if images.count > 0 {
+            debugPrint("Cleaning data...")
+            activityIndicator.startAnimating()
+            activityIndicator.isHidden = false
+
+            self.images = [ImageViewModel]()
+            self.photosList = [Photo]()
+            self.totalPage = 0
+            self.position = 0
+            self.isLoading = true
+
+            collectionView.reloadData()
+        }
+    }
+
+    // MARK: - Action
+    @IBAction func segmentControlDidClicked(_ sender: Any) {
+        selectedIndex = segmentControl.selectedSegmentIndex
+
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            guard let title = segmentControl.titleForSegment(at: selectedIndex) else {
+                break
+            }
+
+            cleanData()
+
+            selectedTitle = title.lowercased()
+            event?.onRequestListPhotos(startPage: 1, perPage: 30, selectedType: title)
+        case 1:
+            guard let title = segmentControl.titleForSegment(at: selectedIndex) else {
+                break
+            }
+
+            cleanData()
+            selectedTitle = title.lowercased()
+
+            event?.onRequestListPhotos(startPage: 1, perPage: 30, selectedType: title)
+        default:
+            print("No selected")
+        }
     }
 }
 
@@ -84,7 +147,8 @@ extension PhotosListViewController: CustomLayoutDelegate {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return self.images.count
     }
@@ -115,7 +179,8 @@ extension PhotosListViewController: UICollectionViewDelegate, UICollectionViewDa
             isLoading = true
 
             event?.onRequestListPhotos(startPage: position,
-                                       perPage: 30 + self.photosList.count)
+                                       perPage: 30 + self.photosList.count,
+                                       selectedType: selectedTitle)
         }
     }
 }
