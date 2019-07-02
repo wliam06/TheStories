@@ -18,6 +18,9 @@
 		3D889F4422CB2D480035DB6D /* MockSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4322CB2D480035DB6D /* MockSearchView.swift */; };
 		3D889F4622CB2D670035DB6D /* MockSearcViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */; };
 		3D889F4922CB2DD00035DB6D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4822CB2DD00035DB6D /* AlertView.swift */; };
+		3D889F4D22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4C22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift */; };
+		3D889F4F22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4E22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift */; };
+		3D889F5322CB2FC70035DB6D /* MockSearchViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F5222CB2FC70035DB6D /* MockSearchViewRouter.swift */; };
 		3DCF38A422C61788003AAEFA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A322C61788003AAEFA /* ServiceManager.swift */; };
 		3DCF38A722C617BF003AAEFA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A622C617BF003AAEFA /* Constant.swift */; };
 		3DCF38AA22C617F1003AAEFA /* PhotosPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A922C617F1003AAEFA /* PhotosPath.swift */; };
@@ -86,6 +89,9 @@
 		3D889F4322CB2D480035DB6D /* MockSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchView.swift; sourceTree = "<group>"; };
 		3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearcViewEvent.swift; sourceTree = "<group>"; };
 		3D889F4822CB2DD00035DB6D /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		3D889F4C22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewInteractorInput.swift; sourceTree = "<group>"; };
+		3D889F4E22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewInteractorOutput.swift; sourceTree = "<group>"; };
+		3D889F5222CB2FC70035DB6D /* MockSearchViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewRouter.swift; sourceTree = "<group>"; };
 		3DCF38A322C61788003AAEFA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		3DCF38A622C617BF003AAEFA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3DCF38A922C617F1003AAEFA /* PhotosPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPath.swift; sourceTree = "<group>"; };
@@ -229,6 +235,9 @@
 			children = (
 				3D889F4322CB2D480035DB6D /* MockSearchView.swift */,
 				3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */,
+				3D889F4C22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift */,
+				3D889F4E22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift */,
+				3D889F5222CB2FC70035DB6D /* MockSearchViewRouter.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -807,11 +816,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D889F4F22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift in Sources */,
 				3D889F4622CB2D670035DB6D /* MockSearcViewEvent.swift in Sources */,
 				3DCF38D622C61BAF003AAEFA /* MockPhotosListInteractorInput.swift in Sources */,
+				3D889F4D22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift in Sources */,
 				3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */,
 				3DCF38D822C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift in Sources */,
 				3DCF38DD22C61C26003AAEFA /* PhotosListViewTests.swift in Sources */,
+				3D889F5322CB2FC70035DB6D /* MockSearchViewRouter.swift in Sources */,
 				3DCF38D422C61B94003AAEFA /* MockPhotosListEvent.swift in Sources */,
 				3D889F4422CB2D480035DB6D /* MockSearchView.swift in Sources */,
 				3DCF38D222C61B6B003AAEFA /* MockPhotosListView.swift in Sources */,
