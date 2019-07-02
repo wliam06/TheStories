@@ -86,6 +86,14 @@ class SearchViewController: UIViewController, SearchView {
 
         self.collectionView.reloadData()
     }
+
+    private func cleanData() {
+        self.images = [ImageViewModel]()
+        self.photosList = [Photo]()
+        self.totalPage = 0
+        self.position = 0
+
+    }
 }
 
 // MARK: - UISearchBarDelegate
@@ -97,11 +105,8 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
 
-        // Make sure data is cleaned
-        self.images = [ImageViewModel]()
-        self.photosList = [Photo]()
-        self.totalPage = 0
-        self.position = 0
+        // Cleaning data
+        cleanData()
 
         self.keyword = keyword
 
@@ -109,14 +114,11 @@ extension SearchViewController: UISearchBarDelegate {
 
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
-
-        self.collectionView.reloadData()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.images = [ImageViewModel]()
-        self.totalPage = 0
-        self.position = 0
+        // Make sure data is cleaned
+        cleanData()
 
         collectionView.reloadData()
     }
