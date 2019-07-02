@@ -53,7 +53,6 @@
 		3DF7BEA922CA6EB50062FE82 /* SearchViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7BEA822CA6EB50062FE82 /* SearchViewRouter.swift */; };
 		3DF7BEAC22CA7B3D0062FE82 /* SearchPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7BEAB22CA7B3D0062FE82 /* SearchPath.swift */; };
 		3DF7BEAE22CA7BD70062FE82 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF7BEAD22CA7BD70062FE82 /* SearchService.swift */; };
-		3DF8AC7F22C7195300E8EDAE /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF8AC7E22C7195300E8EDAE /* ImageViewExtensions.swift */; };
 		6F14F40F4822429761536C4E /* Pods_TheStoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBFE6532E4DF0B76E21760D /* Pods_TheStoriesTests.framework */; };
 		C47F96B187F7F3ACFC4D6352 /* Pods_TheStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71673394F4DF9993255A80 /* Pods_TheStories.framework */; };
 /* End PBXBuildFile section */
@@ -119,7 +118,6 @@
 		3DF7BEA822CA6EB50062FE82 /* SearchViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewRouter.swift; sourceTree = "<group>"; };
 		3DF7BEAB22CA7B3D0062FE82 /* SearchPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPath.swift; sourceTree = "<group>"; };
 		3DF7BEAD22CA7BD70062FE82 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
-		3DF8AC7E22C7195300E8EDAE /* ImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
 		56F761207D47914FC92C620B /* Pods-TheStories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.debug.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.debug.xcconfig"; sourceTree = "<group>"; };
 		AA890AF839837C525D5E586D /* Pods-TheStories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheStories.release.xcconfig"; path = "Target Support Files/Pods-TheStories/Pods-TheStories.release.xcconfig"; sourceTree = "<group>"; };
 		CD71673394F4DF9993255A80 /* Pods_TheStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				3D5D5A6E22C6835900EB4C3D /* ImageExtensions.swift */,
-				3DF8AC7E22C7195300E8EDAE /* ImageViewExtensions.swift */,
 				3D78342B22C7D7DD0018F8E9 /* ColorExtensions.swift */,
 			);
 			path = Extensions;
@@ -776,7 +773,6 @@
 				3DCF38BC22C6199E003AAEFA /* PhotosListInteractorIO.swift in Sources */,
 				3DCF38C522C619F8003AAEFA /* Router.swift in Sources */,
 				3DCF38C822C61A16003AAEFA /* PhotosListRouter.swift in Sources */,
-				3DF8AC7F22C7195300E8EDAE /* ImageViewExtensions.swift in Sources */,
 				3D78342C22C7D7DD0018F8E9 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
