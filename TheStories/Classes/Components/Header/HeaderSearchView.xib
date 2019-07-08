@@ -23,10 +23,11 @@
             <subviews>
                 <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="uZz-zA-U3d">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                    <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UWV-qa-DHX">
-                    <rect key="frame" x="0.0" y="60" width="414" height="56"/>
+                    <rect key="frame" x="0.0" y="56" width="414" height="60"/>
                     <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2NB-Hf-uFF">
                         <size key="itemSize" width="50" height="50"/>
@@ -40,12 +41,11 @@
                     </connections>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="UWV-qa-DHX" secondAttribute="bottom" constant="4" id="1Q1-CW-WjO"/>
                 <constraint firstItem="UWV-qa-DHX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8vd-8n-YBS"/>
                 <constraint firstItem="uZz-zA-U3d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GcB-Kz-b3x"/>
-                <constraint firstItem="UWV-qa-DHX" firstAttribute="top" secondItem="uZz-zA-U3d" secondAttribute="bottom" constant="4" id="V8j-Ad-ko4"/>
+                <constraint firstItem="UWV-qa-DHX" firstAttribute="top" secondItem="uZz-zA-U3d" secondAttribute="bottom" id="V8j-Ad-ko4"/>
                 <constraint firstItem="uZz-zA-U3d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="odB-Ym-ZlE"/>
                 <constraint firstAttribute="trailing" secondItem="UWV-qa-DHX" secondAttribute="trailing" id="pQK-d9-Wbh"/>
                 <constraint firstAttribute="trailing" secondItem="uZz-zA-U3d" secondAttribute="trailing" id="q4k-MT-FVd"/>

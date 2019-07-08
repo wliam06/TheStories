@@ -37,14 +37,8 @@ class SearchViewController: UIViewController, SearchView {
     }
 
     private func configureSearchBar() {
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Stories"
-        searchController.searchBar.becomeFirstResponder()
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchBar.delegate = self
+//        headerSearchView.searchBar.becomeFirstResponder()
+        headerSearchView.searchBar.delegate = self
     }
 
     private func configureCollectionView() {
@@ -112,6 +106,8 @@ class SearchViewController: UIViewController, SearchView {
             self.totalPage = 0
             self.position = 0
             self.isLoading = true
+
+            collectionView.reloadData()
         }
     }
 }
@@ -119,7 +115,11 @@ class SearchViewController: UIViewController, SearchView {
 // MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchBar.text = searchText.capitalized
+        if searchBar.text == "" {
+            cleanData()
+        } else {
+            searchBar.text = searchText.capitalized
+        }
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -134,13 +134,23 @@ extension SearchViewController: UISearchBarDelegate {
 
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
+
+        searchBar.resignFirstResponder()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         // Make sure data is cleaned
         cleanData()
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
 
-        collectionView.reloadData()
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
     }
 }
 
