@@ -14,6 +14,7 @@ class SearchViewRouter: Router {
         let interactor = SearchViewInteractor()
         let presenter = SearchViewPresenter(view: view, interactor: interactor, router: self)
         let navigationController = UINavigationController(rootViewController: view)
+        navigationController.isNavigationBarHidden = true
 
         view.event = presenter
         interactor.output = presenter

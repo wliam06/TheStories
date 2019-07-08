@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, SearchView {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var headerSearchView: HeaderSearchView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     var event: SearchViewEvent?
@@ -36,19 +37,22 @@ class SearchViewController: UIViewController, SearchView {
     }
 
     private func configureSearchBar() {
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Stories"
-        searchController.searchBar.becomeFirstResponder()
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-
-        navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.searchBar.delegate = self
+        headerSearchView.delegate = self
+        headerSearchView.searchBar.delegate = self
     }
 
     private func configureCollectionView() {
         // Customize UICollectionViewLayout
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        var contentInset = UIEdgeInsets(top: headerSearchView.frame.size.height + 10,
+                                        left: 10,
+                                        bottom: 10,
+                                        right: 10)
+        if #available(iOS 11.0, *), let window = UIApplication.shared.keyWindow {
+            contentInset.top -= (window.safeAreaInsets.top - 10)
+        }
+
+        collectionView.contentInset = contentInset
+        collectionView.scrollIndicatorInsets = collectionView.contentInset
 
         // Register cell
         collectionView.register(UINib(nibName: PhotoViewCell.reuseIdentifier(), bundle: nil),
@@ -102,14 +106,28 @@ class SearchViewController: UIViewController, SearchView {
             self.totalPage = 0
             self.position = 0
             self.isLoading = true
+
+            collectionView.reloadData()
         }
+    }
+}
+
+// MARK: - HeaderSearchViewDelegate
+extension SearchViewController: HeaderSearchViewDelegate {
+    func searchTypeDidTapped(withSelectedType selectedType: String) {
+        // navigate to
+        
     }
 }
 
 // MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchBar.text = searchText.capitalized
+        if searchBar.text == "" {
+            cleanData()
+        } else {
+            searchBar.text = searchText.capitalized
+        }
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -124,13 +142,23 @@ extension SearchViewController: UISearchBarDelegate {
 
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
+
+        searchBar.resignFirstResponder()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         // Make sure data is cleaned
         cleanData()
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
 
-        collectionView.reloadData()
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(false, animated: true)
     }
 }
 
