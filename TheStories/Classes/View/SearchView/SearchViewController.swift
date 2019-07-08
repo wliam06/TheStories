@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController, SearchView {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var headerSearchView: HeaderSearchView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     var event: SearchViewEvent?
@@ -48,7 +49,16 @@ class SearchViewController: UIViewController, SearchView {
 
     private func configureCollectionView() {
         // Customize UICollectionViewLayout
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        var contentInset = UIEdgeInsets(top: headerSearchView.frame.size.height + 10,
+                                        left: 10,
+                                        bottom: 10,
+                                        right: 10)
+        if #available(iOS 11.0, *), let window = UIApplication.shared.keyWindow {
+            contentInset.top -= (window.safeAreaInsets.top - 10)
+        }
+
+        collectionView.contentInset = contentInset
+        collectionView.scrollIndicatorInsets = collectionView.contentInset
 
         // Register cell
         collectionView.register(UINib(nibName: PhotoViewCell.reuseIdentifier(), bundle: nil),
