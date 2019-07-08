@@ -37,7 +37,7 @@ class SearchViewController: UIViewController, SearchView {
     }
 
     private func configureSearchBar() {
-//        headerSearchView.searchBar.becomeFirstResponder()
+        headerSearchView.delegate = self
         headerSearchView.searchBar.delegate = self
     }
 
@@ -109,6 +109,14 @@ class SearchViewController: UIViewController, SearchView {
 
             collectionView.reloadData()
         }
+    }
+}
+
+// MARK: - HeaderSearchViewDelegate
+extension SearchViewController: HeaderSearchViewDelegate {
+    func searchTypeDidTapped(withSelectedType selectedType: String) {
+        // navigate to
+        
     }
 }
 

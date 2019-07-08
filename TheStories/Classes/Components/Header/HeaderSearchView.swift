@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol HeaderSearchViewDelegate: class {
+    func searchTypeDidTapped(withSelectedType selectedType: String)
+}
+
 class HeaderSearchView: UIView {
+    weak var delegate: HeaderSearchViewDelegate!
+
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -66,6 +72,12 @@ extension HeaderSearchView: UICollectionViewDelegate, UICollectionViewDataSource
         cell.searchTitle = searchType[indexPath.row]
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let type = searchType[indexPath.row]
+
+        self.delegate.searchTypeDidTapped(withSelectedType: type)
+    }
 }
 
 extension HeaderSearchView: UICollectionViewDelegateFlowLayout {
@@ -84,5 +96,17 @@ extension HeaderSearchView: UICollectionViewDelegateFlowLayout {
 
         let size: CGSize = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         return CGSize(width: size.width, height: 35)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
     }
 }
