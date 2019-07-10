@@ -10,4 +10,6 @@ import Foundation
 
 protocol SearchViewEvent: class {
     func onSearch(keyword: String, startPage: Int, perPage: Int)
+
+    func searchTypeDidTapped(viewController: SearchViewController, selectedType: String)
 }

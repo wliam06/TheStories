@@ -21,4 +21,9 @@ class SearchViewRouter: Router {
 
         return navigationController
     }
+
+    func pushToSearchDetailByType(navigationController: UINavigationController, searchTyped: String) {
+        let searchDetail = SearchDetailRouter()
+        navigationController.pushViewController(searchDetail.controller, animated: true)
+    }
 }
