@@ -34,6 +34,8 @@ class SearchViewController: UIViewController, SearchView {
         configureSearchBar()
 
         configureCollectionView()
+
+        // TODOs: Request popular photos in search
     }
 
     private func configureSearchBar() {
@@ -116,7 +118,7 @@ class SearchViewController: UIViewController, SearchView {
 extension SearchViewController: HeaderSearchViewDelegate {
     func searchTypeDidTapped(withSelectedType selectedType: String) {
         // navigate to
-        
+        event?.searchTypeDidTapped(viewController: self, selectedType: selectedType)
     }
 }
 

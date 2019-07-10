@@ -8,6 +8,16 @@
 
 import UIKit
 
+struct ParentRouter {
+    var navigationController = UINavigationController(rootViewController: UIViewController())
+}
+
 protocol Router {
     var controller: UIViewController { get }
+}
+
+extension Router {
+    var controller: UIViewController {
+        
+    }
 }
