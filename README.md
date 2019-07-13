@@ -25,4 +25,4 @@ Using `Cocoapods` with version  `1.6.1` for manage dependencies. This project ar
 - `Alamofire` used to networking.
 
 ## Credit
-Created by [William](https://www.linkedin.com/in/william-b90619b7/)
+Created by [William](https://www.linkedin.com/in/william-b90619b7)
