@@ -1,6 +1,0 @@
-framework module Pods_TheStoriesTests {
-  umbrella header "Pods-TheStoriesTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

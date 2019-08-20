@@ -15,9 +15,3 @@ struct ParentRouter {
 protocol Router {
     var controller: UIViewController { get }
 }
-
-extension Router {
-    var controller: UIViewController {
-        
-    }
-}

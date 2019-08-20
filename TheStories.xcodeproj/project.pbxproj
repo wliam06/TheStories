@@ -12,7 +12,6 @@
 		3D33758122C4A7EF006EB9F6 /* TheStories.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D33757F22C4A7EF006EB9F6 /* TheStories.xcdatamodeld */; };
 		3D33758322C4A7F1006EB9F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D33758222C4A7F1006EB9F6 /* Assets.xcassets */; };
 		3D33758622C4A7F1006EB9F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D33758422C4A7F1006EB9F6 /* LaunchScreen.storyboard */; };
-		3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */; };
 		3D49D14B22D5D9C0003150BB /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49D14922D5D9C0003150BB /* SearchDetailViewController.swift */; };
 		3D49D14C22D5D9C0003150BB /* SearchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D49D14A22D5D9C0003150BB /* SearchDetailViewController.xib */; };
 		3D49D14E22D5D9CC003150BB /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49D14D22D5D9CC003150BB /* SearchDetailView.swift */; };
@@ -23,16 +22,10 @@
 		3D49D15B22D5DA77003150BB /* SearchDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49D15A22D5DA77003150BB /* SearchDetailRouter.swift */; };
 		3D5D5A6F22C6835900EB4C3D /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5D5A6E22C6835900EB4C3D /* ImageExtensions.swift */; };
 		3D78342C22C7D7DD0018F8E9 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D78342B22C7D7DD0018F8E9 /* ColorExtensions.swift */; };
-		3D889F4422CB2D480035DB6D /* MockSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4322CB2D480035DB6D /* MockSearchView.swift */; };
-		3D889F4622CB2D670035DB6D /* MockSearcViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */; };
 		3D889F4922CB2DD00035DB6D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4822CB2DD00035DB6D /* AlertView.swift */; };
-		3D889F4D22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4C22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift */; };
-		3D889F4F22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F4E22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift */; };
-		3D889F5322CB2FC70035DB6D /* MockSearchViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D889F5222CB2FC70035DB6D /* MockSearchViewRouter.swift */; };
 		3DCF38A422C61788003AAEFA /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A322C61788003AAEFA /* ServiceManager.swift */; };
 		3DCF38A722C617BF003AAEFA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A622C617BF003AAEFA /* Constant.swift */; };
 		3DCF38AA22C617F1003AAEFA /* PhotosPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38A922C617F1003AAEFA /* PhotosPath.swift */; };
-		3DCF38AE22C6186E003AAEFA /* MockServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */; };
 		3DCF38B622C6196F003AAEFA /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38B422C6196F003AAEFA /* PhotosListViewController.swift */; };
 		3DCF38B722C6196F003AAEFA /* PhotosListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DCF38B522C6196F003AAEFA /* PhotosListViewController.xib */; };
 		3DCF38B922C61975003AAEFA /* PhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38B822C61975003AAEFA /* PhotosListView.swift */; };
@@ -42,14 +35,6 @@
 		3DCF38C322C619D7003AAEFA /* PhotosListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38C222C619D7003AAEFA /* PhotosListPresenter.swift */; };
 		3DCF38C522C619F8003AAEFA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38C422C619F8003AAEFA /* Router.swift */; };
 		3DCF38C822C61A16003AAEFA /* PhotosListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38C722C61A16003AAEFA /* PhotosListRouter.swift */; };
-		3DCF38D222C61B6B003AAEFA /* MockPhotosListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D122C61B6B003AAEFA /* MockPhotosListView.swift */; };
-		3DCF38D422C61B94003AAEFA /* MockPhotosListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D322C61B94003AAEFA /* MockPhotosListEvent.swift */; };
-		3DCF38D622C61BAF003AAEFA /* MockPhotosListInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D522C61BAF003AAEFA /* MockPhotosListInteractorInput.swift */; };
-		3DCF38D822C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D722C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift */; };
-		3DCF38DA22C61BE6003AAEFA /* MockPhotosListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38D922C61BE6003AAEFA /* MockPhotosListRouter.swift */; };
-		3DCF38DD22C61C26003AAEFA /* PhotosListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38DC22C61C26003AAEFA /* PhotosListViewTests.swift */; };
-		3DCF38E022C61CA5003AAEFA /* PhotosListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38DF22C61CA5003AAEFA /* PhotosListInteractorTests.swift */; };
-		3DCF38E322C61D09003AAEFA /* PhotosListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38E222C61D09003AAEFA /* PhotosListPresenterTests.swift */; };
 		3DCF38E622C626E9003AAEFA /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38E522C626E9003AAEFA /* PhotoService.swift */; };
 		3DCF38E822C628F0003AAEFA /* ErrorRespond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38E722C628F0003AAEFA /* ErrorRespond.swift */; };
 		3DCF38EF22C62A47003AAEFA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF38EE22C62A47003AAEFA /* Photo.swift */; };
@@ -72,19 +57,8 @@
 		3DFD6AEF22D34B3F00AF7F11 /* SearchTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD6AED22D34B3F00AF7F11 /* SearchTypeCell.swift */; };
 		3DFD6AF022D34B3F00AF7F11 /* SearchTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFD6AEE22D34B3F00AF7F11 /* SearchTypeCell.xib */; };
 		3DFD6AF222D3550600AF7F11 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFD6AF122D3550600AF7F11 /* StringExtensions.swift */; };
-		6F14F40F4822429761536C4E /* Pods_TheStoriesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBBFE6532E4DF0B76E21760D /* Pods_TheStoriesTests.framework */; };
 		C47F96B187F7F3ACFC4D6352 /* Pods_TheStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71673394F4DF9993255A80 /* Pods_TheStories.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3D33758D22C4A7F1006EB9F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D33756D22C4A7EF006EB9F6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3D33757422C4A7EF006EB9F6;
-			remoteInfo = TheStories;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3D0030DE22CA358200DB2D5C /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
@@ -94,9 +68,6 @@
 		3D33758222C4A7F1006EB9F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D33758522C4A7F1006EB9F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D33758722C4A7F1006EB9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D33758C22C4A7F1006EB9F6 /* TheStoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheStoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheStoriesTests.swift; sourceTree = "<group>"; };
-		3D33759222C4A7F1006EB9F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D49D14922D5D9C0003150BB /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		3D49D14A22D5D9C0003150BB /* SearchDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchDetailViewController.xib; sourceTree = "<group>"; };
 		3D49D14D22D5D9CC003150BB /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
@@ -107,16 +78,10 @@
 		3D49D15A22D5DA77003150BB /* SearchDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailRouter.swift; sourceTree = "<group>"; };
 		3D5D5A6E22C6835900EB4C3D /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		3D78342B22C7D7DD0018F8E9 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		3D889F4322CB2D480035DB6D /* MockSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchView.swift; sourceTree = "<group>"; };
-		3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearcViewEvent.swift; sourceTree = "<group>"; };
 		3D889F4822CB2DD00035DB6D /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		3D889F4C22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewInteractorInput.swift; sourceTree = "<group>"; };
-		3D889F4E22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewInteractorOutput.swift; sourceTree = "<group>"; };
-		3D889F5222CB2FC70035DB6D /* MockSearchViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSearchViewRouter.swift; sourceTree = "<group>"; };
 		3DCF38A322C61788003AAEFA /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		3DCF38A622C617BF003AAEFA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3DCF38A922C617F1003AAEFA /* PhotosPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosPath.swift; sourceTree = "<group>"; };
-		3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceManager.swift; sourceTree = "<group>"; };
 		3DCF38B422C6196F003AAEFA /* PhotosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewController.swift; sourceTree = "<group>"; };
 		3DCF38B522C6196F003AAEFA /* PhotosListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosListViewController.xib; sourceTree = "<group>"; };
 		3DCF38B822C61975003AAEFA /* PhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListView.swift; sourceTree = "<group>"; };
@@ -126,14 +91,6 @@
 		3DCF38C222C619D7003AAEFA /* PhotosListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenter.swift; sourceTree = "<group>"; };
 		3DCF38C422C619F8003AAEFA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3DCF38C722C61A16003AAEFA /* PhotosListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListRouter.swift; sourceTree = "<group>"; };
-		3DCF38D122C61B6B003AAEFA /* MockPhotosListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListView.swift; sourceTree = "<group>"; };
-		3DCF38D322C61B94003AAEFA /* MockPhotosListEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListEvent.swift; sourceTree = "<group>"; };
-		3DCF38D522C61BAF003AAEFA /* MockPhotosListInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListInteractorInput.swift; sourceTree = "<group>"; };
-		3DCF38D722C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListInteractorOutput.swift; sourceTree = "<group>"; };
-		3DCF38D922C61BE6003AAEFA /* MockPhotosListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotosListRouter.swift; sourceTree = "<group>"; };
-		3DCF38DC22C61C26003AAEFA /* PhotosListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewTests.swift; sourceTree = "<group>"; };
-		3DCF38DF22C61CA5003AAEFA /* PhotosListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListInteractorTests.swift; sourceTree = "<group>"; };
-		3DCF38E222C61D09003AAEFA /* PhotosListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListPresenterTests.swift; sourceTree = "<group>"; };
 		3DCF38E522C626E9003AAEFA /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		3DCF38E722C628F0003AAEFA /* ErrorRespond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRespond.swift; sourceTree = "<group>"; };
 		3DCF38EE22C62A47003AAEFA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -173,14 +130,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D33758922C4A7F1006EB9F6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F14F40F4822429761536C4E /* Pods_TheStoriesTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -199,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				3D33757722C4A7EF006EB9F6 /* TheStories */,
-				3D33758F22C4A7F1006EB9F6 /* TheStoriesTests */,
 				3D33757622C4A7EF006EB9F6 /* Products */,
 				19B1FAE29E69E0A6307E31E6 /* Pods */,
 				8F654819DC1FB397C2E1F31E /* Frameworks */,
@@ -210,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				3D33757522C4A7EF006EB9F6 /* TheStories.app */,
-				3D33758C22C4A7F1006EB9F6 /* TheStoriesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,21 +169,6 @@
 				3DCF38A122C61762003AAEFA /* Resources */,
 			);
 			path = TheStories;
-			sourceTree = "<group>";
-		};
-		3D33758F22C4A7F1006EB9F6 /* TheStoriesTests */ = {
-			isa = PBXGroup;
-			children = (
-				3D33759022C4A7F1006EB9F6 /* TheStoriesTests.swift */,
-				3D33759222C4A7F1006EB9F6 /* Info.plist */,
-				3DCF38C922C61AE7003AAEFA /* Mock */,
-				3DCF38CA22C61B00003AAEFA /* View */,
-				3DCF38CB22C61B0A003AAEFA /* Interactor */,
-				3DCF38CC22C61B16003AAEFA /* Presenter */,
-				3DCF38CE22C61B2F003AAEFA /* Entity */,
-				3DCF38CD22C61B1F003AAEFA /* Router */,
-			);
-			path = TheStoriesTests;
 			sourceTree = "<group>";
 		};
 		3D49D14822D5D8F7003150BB /* SearchDetail */ = {
@@ -291,18 +223,6 @@
 				3D0030DE22CA358200DB2D5C /* CustomLayout.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		3D889F4222CB2D3B0035DB6D /* SearchView */ = {
-			isa = PBXGroup;
-			children = (
-				3D889F4322CB2D480035DB6D /* MockSearchView.swift */,
-				3D889F4522CB2D670035DB6D /* MockSearcViewEvent.swift */,
-				3D889F4C22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift */,
-				3D889F4E22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift */,
-				3D889F5222CB2FC70035DB6D /* MockSearchViewRouter.swift */,
-			);
-			path = SearchView;
 			sourceTree = "<group>";
 		};
 		3D889F4722CB2DC90035DB6D /* AlertView */ = {
@@ -459,98 +379,6 @@
 			path = PhotosList;
 			sourceTree = "<group>";
 		};
-		3DCF38C922C61AE7003AAEFA /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				3D889F4222CB2D3B0035DB6D /* SearchView */,
-				3DCF38D022C61B5E003AAEFA /* Service */,
-				3DCF38CF22C61B55003AAEFA /* PhotosList */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
-		3DCF38CA22C61B00003AAEFA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38DB22C61C15003AAEFA /* PhotosList */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3DCF38CB22C61B0A003AAEFA /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38DE22C61C9B003AAEFA /* PhotosList */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		3DCF38CC22C61B16003AAEFA /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38E122C61CFD003AAEFA /* PhotosList */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		3DCF38CD22C61B1F003AAEFA /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		3DCF38CE22C61B2F003AAEFA /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		3DCF38CF22C61B55003AAEFA /* PhotosList */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38D122C61B6B003AAEFA /* MockPhotosListView.swift */,
-				3DCF38D322C61B94003AAEFA /* MockPhotosListEvent.swift */,
-				3DCF38D522C61BAF003AAEFA /* MockPhotosListInteractorInput.swift */,
-				3DCF38D722C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift */,
-				3DCF38D922C61BE6003AAEFA /* MockPhotosListRouter.swift */,
-			);
-			path = PhotosList;
-			sourceTree = "<group>";
-		};
-		3DCF38D022C61B5E003AAEFA /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38AD22C6186E003AAEFA /* MockServiceManager.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		3DCF38DB22C61C15003AAEFA /* PhotosList */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38DC22C61C26003AAEFA /* PhotosListViewTests.swift */,
-			);
-			path = PhotosList;
-			sourceTree = "<group>";
-		};
-		3DCF38DE22C61C9B003AAEFA /* PhotosList */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38DF22C61CA5003AAEFA /* PhotosListInteractorTests.swift */,
-			);
-			path = PhotosList;
-			sourceTree = "<group>";
-		};
-		3DCF38E122C61CFD003AAEFA /* PhotosList */ = {
-			isa = PBXGroup;
-			children = (
-				3DCF38E222C61D09003AAEFA /* PhotosListPresenterTests.swift */,
-			);
-			path = PhotosList;
-			sourceTree = "<group>";
-		};
 		3DCF38E422C620EF003AAEFA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,26 +508,6 @@
 			productReference = 3D33757522C4A7EF006EB9F6 /* TheStories.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D33758B22C4A7F1006EB9F6 /* TheStoriesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3D33759822C4A7F1006EB9F6 /* Build configuration list for PBXNativeTarget "TheStoriesTests" */;
-			buildPhases = (
-				B9146C59A3B328273972AB94 /* [CP] Check Pods Manifest.lock */,
-				3D33758822C4A7F1006EB9F6 /* Sources */,
-				3D33758922C4A7F1006EB9F6 /* Frameworks */,
-				3D33758A22C4A7F1006EB9F6 /* Resources */,
-				90AB742997BCE9B628C46B55 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3D33758E22C4A7F1006EB9F6 /* PBXTargetDependency */,
-			);
-			name = TheStoriesTests;
-			productName = TheStoriesTests;
-			productReference = 3D33758C22C4A7F1006EB9F6 /* TheStoriesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -712,10 +520,6 @@
 				TargetAttributes = {
 					3D33757422C4A7EF006EB9F6 = {
 						CreatedOnToolsVersion = 10.2.1;
-					};
-					3D33758B22C4A7F1006EB9F6 = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = 3D33757422C4A7EF006EB9F6;
 					};
 				};
 			};
@@ -733,7 +537,6 @@
 			projectRoot = "";
 			targets = (
 				3D33757422C4A7EF006EB9F6 /* TheStories */,
-				3D33758B22C4A7F1006EB9F6 /* TheStoriesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -751,13 +554,6 @@
 				3DF7BE9822CA6CD90062FE82 /* SearchViewController.xib in Resources */,
 				3DCF38F622C654DA003AAEFA /* PhotoViewCell.xib in Resources */,
 				3D49D14C22D5D9C0003150BB /* SearchDetailViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D33758A22C4A7F1006EB9F6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,45 +594,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		90AB742997BCE9B628C46B55 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheStoriesTests/Pods-TheStoriesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TheStoriesTests/Pods-TheStoriesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheStoriesTests/Pods-TheStoriesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9146C59A3B328273972AB94 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TheStoriesTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		C331B7951958580C263F3BF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -912,37 +669,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D33758822C4A7F1006EB9F6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D889F4F22CB2F400035DB6D /* MockSearchViewInteractorOutput.swift in Sources */,
-				3D889F4622CB2D670035DB6D /* MockSearcViewEvent.swift in Sources */,
-				3DCF38D622C61BAF003AAEFA /* MockPhotosListInteractorInput.swift in Sources */,
-				3D889F4D22CB2F1D0035DB6D /* MockSearchViewInteractorInput.swift in Sources */,
-				3D33759122C4A7F1006EB9F6 /* TheStoriesTests.swift in Sources */,
-				3DCF38D822C61BCE003AAEFA /* MockPhotosListInteractorOutput.swift in Sources */,
-				3DCF38DD22C61C26003AAEFA /* PhotosListViewTests.swift in Sources */,
-				3D889F5322CB2FC70035DB6D /* MockSearchViewRouter.swift in Sources */,
-				3DCF38D422C61B94003AAEFA /* MockPhotosListEvent.swift in Sources */,
-				3D889F4422CB2D480035DB6D /* MockSearchView.swift in Sources */,
-				3DCF38D222C61B6B003AAEFA /* MockPhotosListView.swift in Sources */,
-				3DCF38AE22C6186E003AAEFA /* MockServiceManager.swift in Sources */,
-				3DCF38DA22C61BE6003AAEFA /* MockPhotosListRouter.swift in Sources */,
-				3DCF38E022C61CA5003AAEFA /* PhotosListInteractorTests.swift in Sources */,
-				3DCF38E322C61D09003AAEFA /* PhotosListPresenterTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3D33758E22C4A7F1006EB9F6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3D33757422C4A7EF006EB9F6 /* TheStories */;
-			targetProxy = 3D33758D22C4A7F1006EB9F6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3D33758422C4A7F1006EB9F6 /* LaunchScreen.storyboard */ = {
@@ -1110,50 +837,6 @@
 			};
 			name = Release;
 		};
-		3D33759922C4A7F1006EB9F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D754777E1C91E63A1550C0FF /* Pods-TheStoriesTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97G68FMA7U;
-				INFOPLIST_FILE = TheStoriesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.william.TheStoriesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheStories.app/TheStories";
-			};
-			name = Debug;
-		};
-		3D33759A22C4A7F1006EB9F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C6D754BAD1A21E81D94D59 /* Pods-TheStoriesTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97G68FMA7U;
-				INFOPLIST_FILE = TheStoriesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.william.TheStoriesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheStories.app/TheStories";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1171,15 +854,6 @@
 			buildConfigurations = (
 				3D33759622C4A7F1006EB9F6 /* Debug */,
 				3D33759722C4A7F1006EB9F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3D33759822C4A7F1006EB9F6 /* Build configuration list for PBXNativeTarget "TheStoriesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3D33759922C4A7F1006EB9F6 /* Debug */,
-				3D33759A22C4A7F1006EB9F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
