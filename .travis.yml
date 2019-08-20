@@ -1,0 +1,12 @@
+language: osx_image: xcode10.3
+osx_image: xcode10.3
+branches:
+  only:
+    - master
+    - develop
+    - /^feature-.*$/
+install:
+  - pod install
+xcode_workspace: sayafit.xcworkspace
+xcode_scheme: TheStories
+xcode_destination: platform= iOS Simulator, OS=12.3, name=iPhone 6
